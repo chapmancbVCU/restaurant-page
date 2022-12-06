@@ -4,3 +4,12 @@
   Date Created: December 4, 2022
    Description: CSS Stylesheet for Restaurant Page  project.
 ******************************************************************************/
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background-color: burlywood;
+  height: 100px;
+}

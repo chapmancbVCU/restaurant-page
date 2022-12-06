@@ -18,7 +18,12 @@
   },
   "homepage": "https://github.com/chapmancbVCU/restaurant-page#readme",
   "devDependencies": {
+    "css-loader": "^6.7.2",
+    "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
