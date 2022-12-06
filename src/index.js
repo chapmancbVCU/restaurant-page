@@ -12,7 +12,12 @@ const container = document.querySelector('#content');
 
 function component() {
     const element = document.createElement('div');
-    element.classList.add('main');
+    element.classList.add('header');
+
+    const title = document.createElement('h1');
+    title.textContent = 'Burnt Popcorn Eatery';
+
+    element.appendChild(title);
     
     return element;
 }
