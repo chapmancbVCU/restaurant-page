@@ -17,13 +17,13 @@ import { contactUsComponents } from './contactUsTabPage';
 const container = document.querySelector('#content');
 
 function component() {
-    const element = document.createElement('div');
-    element.classList.add('header');
+    const pageContent = document.createElement('div');
+    pageContent.classList.add('header');
 
     const title = document.createElement('h1');
     title.textContent = 'Burnt Popcorn Eatery';
 
-    element.appendChild(title);
+    pageContent.appendChild(title);
     
     const list = document.createElement('ul');
 
@@ -42,9 +42,9 @@ function component() {
     contactUsTab.textContent = "Contact Us";
     list.appendChild(contactUsTab);
 
-    element.appendChild(list);
+    pageContent.appendChild(list);
 
-    return element;
+    return pageContent;
 }
 
 container.appendChild(component());
