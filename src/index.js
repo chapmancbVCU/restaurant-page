@@ -4,8 +4,14 @@
  * Date Created: December 4, 2022
  *  Description: Functions that support implementation of Restaurant website
 ******************************************************************************/
+
+/*
+IMPORTS
+*/
 import _ from 'lodash';
 import './styles.css';
+import { homeComponents } from './homeTabPage.js';
+import { menuComponents } from './menuTabPage';
 console.log("hi hi");
 
 const container = document.querySelector('#content');
@@ -44,10 +50,10 @@ EVENT LISTENERS
 */
 const home = document.querySelector('#home-tab');
 home.addEventListener('click', function() {
-    alert('home');
+    homeComponents();
 });
 
 const menu = document.querySelector('#menu-tab');
 menu.addEventListener('click', function() {
-    alert('menu');
+    menuComponents();
 });
