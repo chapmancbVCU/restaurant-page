@@ -12,7 +12,7 @@ import _ from 'lodash';
 import './styles.css';
 import { homeComponents } from './homeTabPage.js';
 import { menuComponents } from './menuTabPage';
-console.log("hi hi");
+import { contactUsComponents } from './contactUsTabPage';
 
 const container = document.querySelector('#content');
 
@@ -26,17 +26,21 @@ function component() {
     element.appendChild(title);
     
     const list = document.createElement('ul');
+
     const homeTab = document.createElement('li');
     homeTab.setAttribute('id', 'home-tab');
+    homeTab.textContent = 'Home';
+    list.appendChild(homeTab);
 
     const menuTab = document.createElement('li');
     menuTab.setAttribute('id', 'menu-tab');
-
-    homeTab.textContent = 'Home';
     menuTab.textContent = "Menu";
-
-    list.appendChild(homeTab);
     list.appendChild(menuTab);
+
+    const contactUsTab = document.createElement('li');
+    contactUsTab.setAttribute('id', 'contact-us-tab');
+    contactUsTab.textContent = "Contact Us";
+    list.appendChild(contactUsTab);
 
     element.appendChild(list);
 
@@ -56,4 +60,9 @@ home.addEventListener('click', function() {
 const menu = document.querySelector('#menu-tab');
 menu.addEventListener('click', function() {
     menuComponents();
+});
+
+const contactUs = document.querySelector('#contact-us-tab');
+contactUs.addEventListener('click', function() {
+    contactUsComponents();
 });
