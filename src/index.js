@@ -19,7 +19,35 @@ function component() {
 
     element.appendChild(title);
     
+    const list = document.createElement('ul');
+    const homeTab = document.createElement('li');
+    homeTab.setAttribute('id', 'home-tab');
+
+    const menuTab = document.createElement('li');
+    menuTab.setAttribute('id', 'menu-tab');
+
+    homeTab.textContent = 'Home';
+    menuTab.textContent = "Menu";
+
+    list.appendChild(homeTab);
+    list.appendChild(menuTab);
+
+    element.appendChild(list);
+
     return element;
 }
 
 container.appendChild(component());
+
+/*
+EVENT LISTENERS
+*/
+const home = document.querySelector('#home-tab');
+home.addEventListener('click', function() {
+    alert('home');
+});
+
+const menu = document.querySelector('#menu-tab');
+menu.addEventListener('click', function() {
+    alert('menu');
+});
