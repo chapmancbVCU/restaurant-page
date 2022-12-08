@@ -26,7 +26,7 @@ function component() {
     pageContent.appendChild(title);
     
     const list = document.createElement('ul');
-
+    list.classList.add('tabs');
     const homeTab = document.createElement('li');
     homeTab.setAttribute('id', 'home-tab');
     homeTab.textContent = 'Home';

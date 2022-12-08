@@ -24,7 +24,7 @@ body {
 }
 
 .header {
-  height: 150px;
+  height: 145px;
   border: solid black 1px;
 
   display: flex;
@@ -36,3 +36,22 @@ h1 {
   text-align: center;
 }
 
+.tabs {
+  list-style-type: none;
+
+  display: flex;
+  column-gap: 100px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tabs li {
+  border: solid black 1px;
+  
+  width: 100px;
+  height: 40px;
+  
+  text-align: center;
+  padding-top: 10px;
+}
