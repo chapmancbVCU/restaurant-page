@@ -49,9 +49,9 @@ function component() {
 
 container.appendChild(component());
 
-/*
-EVENT LISTENERS
-*/
+/******************************************************************************
+ * EVENT LISTENERS
+ *****************************************************************************/
 const home = new Home();
 const homePage = document.querySelector('#home-tab');
 homePage.addEventListener('click', function() {
@@ -69,3 +69,7 @@ const contactUsPage = document.querySelector('#contact-us-tab');
 contactUsPage.addEventListener('click', function() {
     contactUs.components();
 });
+
+
+// Call home upon page load.
+home.components();

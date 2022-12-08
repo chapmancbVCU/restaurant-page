@@ -4,10 +4,10 @@
  * Date Created: December 6, 2022
  *  Description: Provides ability to render components of contact us tab.
 ******************************************************************************/
-
-export class ContactUs {
+import { Page } from "./page";
+export class ContactUs extends Page {
     constructor() {
-
+        super();
     }
 
     components() {
