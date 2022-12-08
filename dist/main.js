@@ -140,6 +140,28 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/contactUsTabPage.js":
+/*!*********************************!*\
+  !*** ./src/contactUsTabPage.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"ContactUs\": () => (/* binding */ ContactUs)\n/* harmony export */ });\n/******************************************************************************\n *         Name: contactUsTabPage.js\n *       Author: Chad Chapman\n * Date Created: December 6, 2022\n *  Description: Provides ability to render components of contact us tab.\n******************************************************************************/\n\nclass ContactUs {\n    constructor() {\n\n    }\n    \n    contactUsComponents() {\n        alert('Contact Us');\n    }\n}\n\n//# sourceURL=webpack://restaurant-page/./src/contactUsTabPage.js?");
+
+/***/ }),
+
+/***/ "./src/homeTabPage.js":
+/*!****************************!*\
+  !*** ./src/homeTabPage.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Home\": () => (/* binding */ Home)\n/* harmony export */ });\n/******************************************************************************\n *         Name: homeTabPage.js\n *       Author: Chad Chapman\n * Date Created: December 6, 2022\n *  Description: Provides ability to render components of home tab.\n******************************************************************************/\n\nclass Home {\n    constructor() {\n\n    }\n\n    homeComponents() {\n        alert('home');\n    }\n}\n\n//# sourceURL=webpack://restaurant-page/./src/homeTabPage.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -147,7 +169,18 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/******************************************************************************\n *         Name: index.js\n *       Author: Chad Chapman\n * Date Created: December 4, 2022\n *  Description: Functions that support implementation of Restaurant website\n******************************************************************************/\n\n\nconsole.log(\"hi hi\");\n\nconst container = document.querySelector('#content');\n\nfunction component() {\n    const element = document.createElement('div');\n    element.classList.add('header');\n\n    const title = document.createElement('h1');\n    title.textContent = 'Burnt Popcorn Eatery';\n\n    element.appendChild(title);\n    \n    const list = document.createElement('ul');\n    const homeTab = document.createElement('li');\n    homeTab.setAttribute('id', 'home-tab');\n\n    const menuTab = document.createElement('li');\n    menuTab.setAttribute('id', 'menu-tab');\n\n    homeTab.textContent = 'Home';\n    menuTab.textContent = \"Menu\";\n\n    list.appendChild(homeTab);\n    list.appendChild(menuTab);\n\n    element.appendChild(list);\n\n    return element;\n}\n\ncontainer.appendChild(component());\n\n/*\nEVENT LISTENERS\n*/\nconst home = document.querySelector('#home-tab');\nhome.addEventListener('click', function() {\n    alert('home');\n});\n\nconst menu = document.querySelector('#menu-tab');\nmenu.addEventListener('click', function() {\n    alert('menu');\n});\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _homeTabPage_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./homeTabPage.js */ \"./src/homeTabPage.js\");\n/* harmony import */ var _menuTabPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./menuTabPage */ \"./src/menuTabPage.js\");\n/* harmony import */ var _contactUsTabPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contactUsTabPage */ \"./src/contactUsTabPage.js\");\n/******************************************************************************\n *         Name: index.js\n *       Author: Chad Chapman\n * Date Created: December 4, 2022\n *  Description: Functions that support implementation of Restaurant website\n******************************************************************************/\n\n/*\nIMPORTS\n*/\n\n\n\n\n\n\nconst container = document.querySelector('#content');\n\nfunction component() {\n    const pageContent = document.createElement('div');\n    pageContent.classList.add('header');\n\n    const title = document.createElement('h1');\n    title.textContent = 'Burnt Popcorn Eatery';\n\n    pageContent.appendChild(title);\n    \n    const list = document.createElement('ul');\n\n    const homeTab = document.createElement('li');\n    homeTab.setAttribute('id', 'home-tab');\n    homeTab.textContent = 'Home';\n    list.appendChild(homeTab);\n\n    const menuTab = document.createElement('li');\n    menuTab.setAttribute('id', 'menu-tab');\n    menuTab.textContent = \"Menu\";\n    list.appendChild(menuTab);\n\n    const contactUsTab = document.createElement('li');\n    contactUsTab.setAttribute('id', 'contact-us-tab');\n    contactUsTab.textContent = \"Contact Us\";\n    list.appendChild(contactUsTab);\n\n    pageContent.appendChild(list);\n\n    return pageContent;\n}\n\ncontainer.appendChild(component());\n\n/*\nEVENT LISTENERS\n*/\nconst home = new _homeTabPage_js__WEBPACK_IMPORTED_MODULE_2__.Home();\nconst homePage = document.querySelector('#home-tab');\nhomePage.addEventListener('click', function() {\n    home.homeComponents();\n});\n\nconst menu = new _menuTabPage__WEBPACK_IMPORTED_MODULE_3__.Menu();\nconst menuPage = document.querySelector('#menu-tab');\nmenuPage.addEventListener('click', function() {\n    menu.menuComponents();\n});\n\nconst contactUs = new _contactUsTabPage__WEBPACK_IMPORTED_MODULE_4__.ContactUs();\nconst contactUsPage = document.querySelector('#contact-us-tab');\ncontactUsPage.addEventListener('click', function() {\n    contactUs.contactUsComponents();\n});\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/menuTabPage.js":
+/*!****************************!*\
+  !*** ./src/menuTabPage.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Menu\": () => (/* binding */ Menu)\n/* harmony export */ });\n/******************************************************************************\n *         Name: menuTabPage.js\n *       Author: Chad Chapman\n * Date Created: December 6, 2022\n *  Description: Provides ability to render components of menu tab.\n******************************************************************************/\n\nclass Menu {\n    constructor() {\n\n    }\n\n    menuComponents() {\n        alert('menu');\n    }\n}\n\n//# sourceURL=webpack://restaurant-page/./src/menuTabPage.js?");
 
 /***/ }),
 

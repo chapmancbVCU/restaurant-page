@@ -5,6 +5,12 @@
  *  Description: Provides ability to render components of contact us tab.
 ******************************************************************************/
 
-export function contactUsComponents() {
-    alert('Contact Us');
+export class ContactUs {
+    constructor() {
+
+    }
+    
+    contactUsComponents() {
+        alert('Contact Us');
+    }
 }

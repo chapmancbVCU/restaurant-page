@@ -5,6 +5,12 @@
  *  Description: Provides ability to render components of menu tab.
 ******************************************************************************/
 
-export function menuComponents() {
-    alert('menu');
+export class Menu {
+    constructor() {
+
+    }
+
+    menuComponents() {
+        alert('menu');
+    }
 }

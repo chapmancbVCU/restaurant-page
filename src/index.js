@@ -10,9 +10,9 @@ IMPORTS
 */
 import _ from 'lodash';
 import './styles.css';
-import { homeComponents } from './homeTabPage.js';
-import { menuComponents } from './menuTabPage';
-import { contactUsComponents } from './contactUsTabPage';
+import { Home } from './homeTabPage.js';
+import { Menu } from './menuTabPage';
+import { ContactUs, contactUsComponents } from './contactUsTabPage';
 
 const container = document.querySelector('#content');
 
@@ -52,17 +52,20 @@ container.appendChild(component());
 /*
 EVENT LISTENERS
 */
-const home = document.querySelector('#home-tab');
-home.addEventListener('click', function() {
-    homeComponents();
+const home = new Home();
+const homePage = document.querySelector('#home-tab');
+homePage.addEventListener('click', function() {
+    home.homeComponents();
 });
 
-const menu = document.querySelector('#menu-tab');
-menu.addEventListener('click', function() {
-    menuComponents();
+const menu = new Menu();
+const menuPage = document.querySelector('#menu-tab');
+menuPage.addEventListener('click', function() {
+    menu.menuComponents();
 });
 
-const contactUs = document.querySelector('#contact-us-tab');
-contactUs.addEventListener('click', function() {
-    contactUsComponents();
+const contactUs = new ContactUs();
+const contactUsPage = document.querySelector('#contact-us-tab');
+contactUsPage.addEventListener('click', function() {
+    contactUs.contactUsComponents();
 });

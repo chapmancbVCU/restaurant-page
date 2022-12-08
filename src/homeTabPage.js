@@ -5,6 +5,12 @@
  *  Description: Provides ability to render components of home tab.
 ******************************************************************************/
 
-export function homeComponents() {
-    alert('home');
+export class Home {
+    constructor() {
+
+    }
+
+    homeComponents() {
+        alert('home');
+    }
 }
