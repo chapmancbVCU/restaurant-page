@@ -47,8 +47,12 @@ h1 {
 }
 
 .tabs li {
-  border: solid black 1px;
-  
+  border-left: solid black 1px;
+  border-top: solid black 1px;
+  border-right: solid black 1px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
   width: 100px;
   height: 40px;
   
@@ -56,6 +60,13 @@ h1 {
   padding-top: 10px;
 }
 
-h2 {
+h2, h3 {
+  text-align: center;
+}
+
+p {
+  border: solid black 1px;
+  margin-left: 100px;
+  margin-right: 100px;
   text-align: center;
 }
