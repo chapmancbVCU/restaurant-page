@@ -13,7 +13,11 @@ export class Home extends Page {
     components() {
         const mainContent = document.createElement("div");
         mainContent.setAttribute('id', 'main');
-        mainContent.textContent = 'Home page';
         this.container.appendChild(mainContent);
+
+        // Setup title
+        const pageTitle = document.createElement('h2');
+        pageTitle.textContent = 'Home page';
+        mainContent.appendChild(pageTitle);
     }
 }

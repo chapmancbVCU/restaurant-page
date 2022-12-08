@@ -25,18 +25,23 @@ function component() {
 
     pageContent.appendChild(title);
     
+    // Setup tabs
     const list = document.createElement('ul');
     list.classList.add('tabs');
+
+    // Setup home link
     const homeTab = document.createElement('li');
     homeTab.setAttribute('id', 'home-tab');
     homeTab.textContent = 'Home';
     list.appendChild(homeTab);
 
+    // Setup menu link
     const menuTab = document.createElement('li');
     menuTab.setAttribute('id', 'menu-tab');
     menuTab.textContent = "Menu";
     list.appendChild(menuTab);
 
+    // Setup contact us
     const contactUsTab = document.createElement('li');
     contactUsTab.setAttribute('id', 'contact-us-tab');
     contactUsTab.textContent = "Contact Us";

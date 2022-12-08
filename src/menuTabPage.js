@@ -13,7 +13,11 @@ export class Menu extends Page {
     components() {
         const mainContent = document.createElement("div");
         mainContent.setAttribute('id', 'main');
-        mainContent.textContent = 'Menu page';
         this.container.appendChild(mainContent);
+
+        // Setup title
+        const pageTitle = document.createElement('h2');
+        pageTitle.textContent = 'Menu';
+        mainContent.appendChild(pageTitle);
     }
 }

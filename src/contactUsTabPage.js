@@ -13,7 +13,11 @@ export class ContactUs extends Page {
     components() {
         const mainContent = document.createElement("div");
         mainContent.setAttribute('id', 'main');
-        mainContent.textContent = 'Contact us';
         this.container.appendChild(mainContent);
+
+        // Setup title
+        const pageTitle = document.createElement('h2');
+        pageTitle.textContent = 'Contact Us';
+        mainContent.appendChild(pageTitle);
     }
 }
