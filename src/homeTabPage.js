@@ -10,7 +10,7 @@ export class Home {
 
     }
 
-    homeComponents() {
+    components() {
         alert('home');
     }
 }

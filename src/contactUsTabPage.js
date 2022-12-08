@@ -9,8 +9,8 @@ export class ContactUs {
     constructor() {
 
     }
-    
-    contactUsComponents() {
+
+    components() {
         alert('Contact Us');
     }
 }

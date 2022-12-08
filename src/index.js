@@ -55,17 +55,17 @@ EVENT LISTENERS
 const home = new Home();
 const homePage = document.querySelector('#home-tab');
 homePage.addEventListener('click', function() {
-    home.homeComponents();
+    home.components();
 });
 
 const menu = new Menu();
 const menuPage = document.querySelector('#menu-tab');
 menuPage.addEventListener('click', function() {
-    menu.menuComponents();
+    menu.components();
 });
 
 const contactUs = new ContactUs();
 const contactUsPage = document.querySelector('#contact-us-tab');
 contactUsPage.addEventListener('click', function() {
-    contactUs.contactUsComponents();
+    contactUs.components();
 });

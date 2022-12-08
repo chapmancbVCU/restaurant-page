@@ -10,7 +10,7 @@ export class Menu {
 
     }
 
-    menuComponents() {
+    components() {
         alert('menu');
     }
 }
