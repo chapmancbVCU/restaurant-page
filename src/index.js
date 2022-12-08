@@ -55,18 +55,21 @@ container.appendChild(component());
 const home = new Home();
 const homePage = document.querySelector('#home-tab');
 homePage.addEventListener('click', function() {
+    home.eraseDomContent();
     home.components();
 });
 
 const menu = new Menu();
 const menuPage = document.querySelector('#menu-tab');
 menuPage.addEventListener('click', function() {
+    menu.eraseDomContent();
     menu.components();
 });
 
 const contactUs = new ContactUs();
 const contactUsPage = document.querySelector('#contact-us-tab');
 contactUsPage.addEventListener('click', function() {
+    contactUs.eraseDomContent();
     contactUs.components();
 });
 
