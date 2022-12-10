@@ -30,9 +30,9 @@ export class Page {
         const footer = document.createElement('div');
         footer.setAttribute('id', 'footer');
         footer.classList.add('page-footer');
-        const text = document.createElement('p');
-        text.textContent = 'afdafa';
-        footer.appendChild(text);
+        const siteCurator = document.createElement('h4');
+        siteCurator.textContent = 'Created by: Chad Chapman';
+        footer.appendChild(siteCurator);
         this.container.appendChild(footer);
     }
 
