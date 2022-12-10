@@ -148,6 +148,11 @@ export class Home extends Page {
         parentContainer.appendChild(locationContainer);
     }
 
+    /**
+     * This method is responsible for rendering image of a bowl of popcorn.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
     static renderPopcornBowl(parentContainer) {
         const popCornBowlImage = new Image();
         popCornBowlImage.classList.add('popcorn-bowl-image');
@@ -155,6 +160,11 @@ export class Home extends Page {
         parentContainer.appendChild(popCornBowlImage);
     }
 
+    /**
+     * This method is responsible for rendering image of popcorn in a mug.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
     static renderPopcornMug(parentContainer) {
         const popCornMugImage = new Image();
         popCornMugImage.classList.add('popcorn-mug-image');
