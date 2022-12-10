@@ -4,7 +4,12 @@
  * Date Created: December 6, 2022
  *  Description: Provides ability to render components of home tab.
 ******************************************************************************/
-import { add } from "lodash";
+
+/******************************************************************************
+ * IMPORTS
+ *****************************************************************************/
+
+
 import { Page } from "./page";
 export class Home extends Page {
     constructor() {
