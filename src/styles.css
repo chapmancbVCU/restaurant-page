@@ -92,6 +92,10 @@ h1 {
   background-color: var(--tab-and-page-color);
 }
 
+#home-tab, #menu-tab {
+  padding-top: 15px;
+}
+
 .main-content {
   background-color: var(--tab-and-page-color);
 }
@@ -183,6 +187,10 @@ h2, h3 {
 
 .location-info {
   margin-bottom: 25px;
+}
+
+.contact-us {
+  margin-bottom: 5px;
 }
 @media only screen and (min-width: 700px) {
   .tabs {
