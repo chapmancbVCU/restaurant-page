@@ -64,14 +64,17 @@ h2, h3 {
   text-align: center;
 }
 
-.page-section-paragraph {
+.paragraph-container {
   border: solid black 1px;
+  border-radius: 5px;
+
   margin-left: 100px;
   margin-right: 100px;
+  
   text-align: center;
 }
 
-.hours-container {
+.hours-container, .location-info {
   border: solid black 1px;
   border-radius: 5px;
 
@@ -80,16 +83,16 @@ h2, h3 {
   margin-right: auto;
 }
 
-.daily-hours {
+.daily-hours, .address {
   text-align: center;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.daily-hours:first-of-type {
+.daily-hours:first-of-type, .address:first-of-type {
   margin-top: 15px;
 }
 
-.daily-hours:last-of-type {
+.daily-hours:last-of-type, .address:last-of-type {
   margin-bottom: 15px;
 }

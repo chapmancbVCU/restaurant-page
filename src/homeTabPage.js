@@ -4,6 +4,7 @@
  * Date Created: December 6, 2022
  *  Description: Provides ability to render components of home tab.
 ******************************************************************************/
+import { add } from "lodash";
 import { Page } from "./page";
 export class Home extends Page {
     constructor() {
@@ -20,25 +21,31 @@ export class Home extends Page {
         pageTitle.textContent = 'Welcome';
         mainContent.appendChild(pageTitle);
 
-        const aboutUs = document.createElement('p');
-        aboutUs.classList.add('page-section-paragraph');
-        aboutUs.textContent = 'At Burnt Popcorn Eatery we offer different types of popcorn but our specialty is burnt popcorn.  We also offer several types of delicious beverages and smoothies that are perfect for washing down our delicious snacks.';
-        mainContent.appendChild(aboutUs);
+        // About us
+        Home.aboutUs(mainContent);
 
         // Describe hours
         const hoursHeader = document.createElement('h3');
         hoursHeader.textContent = 'Hours';
         mainContent.appendChild(hoursHeader);
-
         const hoursContainer = document.createElement('div');
         hoursContainer.classList.add('hours-container');
         Home.hours(hoursContainer);
-
-
-
-
-
         mainContent.appendChild(hoursContainer);
+
+        // Location
+        Home.location(mainContent);
+    }
+
+    static aboutUs(parentContainer) {
+        const aboutUsContainer = document.createElement('div');
+        aboutUsContainer.classList.add('paragraph-container');
+
+        const aboutUs = document.createElement('p');
+        aboutUs.textContent = 'At Burnt Popcorn Eatery we offer different types of popcorn but our specialty is burnt popcorn.  We also offer several types of delicious beverages and smoothies that are perfect for washing down our delicious snacks.';
+        
+        aboutUsContainer.appendChild(aboutUs)
+        parentContainer.appendChild(aboutUsContainer);
     }
 
     static hours(parentContainer) {
@@ -76,5 +83,26 @@ export class Home extends Page {
         saturday.textContent = 'Saturday: 11PA - 10PM';
         saturday.classList.add('daily-hours');
         parentContainer.appendChild(saturday);
+    }
+
+    static location(parentContainer) {
+        const address = document.createElement('h3');
+        address.textContent = 'Locations';
+        parentContainer.appendChild(address);
+
+        const locationContainer = document.createElement('div');
+        locationContainer.classList.add('location-info');
+
+        const street = document.createElement('p');
+        street.textContent = '123 Main Street';
+        street.classList.add('address');
+        locationContainer.appendChild(street);
+
+        const cityStateZip = document.createElement('p');
+        cityStateZip.textContent = 'Westchestertonfieldville, USA 12345';
+        cityStateZip.classList.add('address');
+        locationContainer.appendChild(cityStateZip);
+
+        parentContainer.appendChild(locationContainer);
     }
 }
