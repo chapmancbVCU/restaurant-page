@@ -29,6 +29,7 @@ export class ContactUs extends Page {
     components() {
         const mainContent = document.createElement("div");
         mainContent.setAttribute('id', 'main');
+        mainContent.classList.add('main-content');
         this.container.appendChild(mainContent);
 
         // Setup title
