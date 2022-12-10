@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: page.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: page.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/******************************************************************************
+ *         Name: page.js
+ *       Author: Chad Chapman
+ * Date Created: December 8, 2022
+ *  Description: Super class for classes that describes the home, menu, and
+ *               contact us pages.
+******************************************************************************/
+
+/**
+ * This class is the super class for all of the other classes that implements 
+ * the other pages for this site.
+ */
+export class Page {
+    /**
+     * Default constructor.  It initializes the container object that 
+     * queries the #content id.
+     */
+    constructor() {
+        this.container = document.querySelector('#content');
+    }
+    
+    /**
+     * This method is called when the user selects a new tab.  It erases the 
+     * contents of the currently selected tab so that we can render the 
+     * information for the newly selected tab.
+     */
+    eraseDomContent() {
+        const elements = document.getElementById('main');
+        elements.remove();
+    }
+
+    /**
+     * This method is called when we want to render the contents of the footer 
+     * section of the webpage.
+     */
+    footerComponents() {
+        const footer = document.createElement('div');
+        footer.setAttribute('id', 'footer');
+        footer.classList.add('page-footer');
+        
+        const siteCurator = document.createElement('h4');
+        siteCurator.textContent = 'Created by: Chad Chapman';
+        siteCurator.classList.add('footer-text');
+        footer.appendChild(siteCurator);
+
+        const linkedIn = document.createElement('p');
+        linkedIn.classList.add('footer-text');
+        const linkedInURL = document.createElement('a');
+        linkedInURL.textContent = "LinkedIn";
+        linkedInURL.href = 'https://www.linkedin.com/in/chadchapman2010/';
+        linkedIn.appendChild(linkedInURL);
+        footer.appendChild(linkedIn);
+
+        const gitHub = document.createElement('p');
+        gitHub.classList.add('footer-text');
+        const gitHubURL = document.createElement('a');
+        gitHubURL.textContent = 'GitHub';
+        gitHubURL.href = 'https://github.com/chapmancbVCU';
+        gitHub.appendChild(gitHubURL);
+        footer.appendChild(gitHub);
+        this.container.appendChild(footer);
+    }
+
+    /**
+     * This method is responsible for rendering the header section of the 
+     * webpage.  The header consists of the title and the tabs that are used 
+     * to select the home, menu, and contact us sections of the website.
+     * @returns The HTMLDivElement that describes the header section
+     */
+    headerComponents() {
+        const pageContent = document.createElement('div');
+        pageContent.classList.add('header');
+        const title = document.createElement('h1');
+        title.textContent = 'Burnt Popcorn Eatery';
+        pageContent.appendChild(title);
+        
+        // Setup tabs
+        const list = document.createElement('ul');
+        list.classList.add('tabs');
+    
+        // Setup home link
+        const homeTab = document.createElement('li');
+        homeTab.setAttribute('id', 'home-tab');
+        homeTab.textContent = 'Home';
+        list.appendChild(homeTab);
+    
+        // Setup menu link
+        const menuTab = document.createElement('li');
+        menuTab.setAttribute('id', 'menu-tab');
+        menuTab.textContent = "Menu";
+        list.appendChild(menuTab);
+    
+        // Setup contact us
+        const contactUsTab = document.createElement('li');
+        contactUsTab.setAttribute('id', 'contact-us-tab');
+        contactUsTab.textContent = "Contact Us";
+        list.appendChild(contactUsTab);
+    
+        pageContent.appendChild(list);
+        return pageContent;
+    }
+
+    /**
+     * This method removes the footer from the DOM so that we can update the 
+     * contents of the page when the user selects a tab.
+     */
+    removeFooterFromDom() {
+        const footer = document.getElementById('footer');
+        footer.remove();
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ContactUs.html">ContactUs</a></li><li><a href="Home.html">Home</a></li><li><a href="Menu.html">Menu</a></li><li><a href="Page.html">Page</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Fri Dec 09 2022 22:28:02 GMT-0500 (Eastern Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
