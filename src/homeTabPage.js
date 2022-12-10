@@ -36,6 +36,7 @@ export class Home extends Page {
 
         // Location
         Home.location(mainContent);
+        
     }
 
     static aboutUs(parentContainer) {
