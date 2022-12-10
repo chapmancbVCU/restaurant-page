@@ -11,14 +11,16 @@
   font-weight: normal;
   font-style: normal;
 }
+
 * {
   margin: 0;
   padding: 0;
 }
 
 :root {
-  --tab-color: rgb(250, 209, 154);
+  --tab-and-page-color: rgb(250, 209, 154);
 }
+
 body {
   
   background-image: url(../src/popcorn-background.jpg);
@@ -57,7 +59,7 @@ h1 {
   column-gap: 10px;
   justify-content: center;
   
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .tabs {
@@ -82,18 +84,16 @@ h1 {
   border-top-right-radius: 5px;
 
   width: 80px;
-  height: 40px;
+  height: 45px;
   
   text-align: center;
   padding-top: 5px;
 
-  background-color: var(--tab-color);
-
-  
+  background-color: var(--tab-and-page-color);
 }
 
 .main-content {
-  background-color: var(--tab-color);
+  background-color: var(--tab-and-page-color);
 }
 
 h2, h3 {
