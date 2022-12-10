@@ -4,6 +4,13 @@
   Date Created: December 4, 2022
    Description: CSS Stylesheet for Restaurant Page  project.
 ******************************************************************************/
+@font-face {
+  font-family: "typewriter";
+  src: url("./momt___-webfont.woff2") format("woff2"),
+      url("./momt___-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -54,6 +61,8 @@ h1 {
 }
 
 .tabs {
+  font-family: 'typewriter';
+  font-size:small;
   list-style-type: none;
 
   display: flex;
@@ -61,7 +70,7 @@ h1 {
 
   margin-left: auto;
   margin-right: auto;
-
+  
   padding-top: 37px;
 }
 
@@ -79,6 +88,8 @@ h1 {
   padding-top: 10px;
 
   background-color: var(--tab-color);
+
+  
 }
 
 .main-content {
