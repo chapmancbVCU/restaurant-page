@@ -62,7 +62,7 @@ h1 {
 
 .tabs {
   font-family: 'typewriter';
-  font-size:small;
+  font-size: medium;
   list-style-type: none;
 
   display: flex;
@@ -71,7 +71,7 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   
-  padding-top: 37px;
+  padding-top: 26px;
 }
 
 .tabs li {
