@@ -83,6 +83,9 @@ export class Page {
         title.textContent = 'Burnt Popcorn Eatery';
         pageContent.appendChild(title);
         
+        // Setup Social Media icons
+        pageContent.appendChild(this.socialMedia());
+
         // Setup tabs
         const list = document.createElement('ul');
         list.classList.add('tabs');
@@ -116,5 +119,47 @@ export class Page {
     removeFooterFromDom() {
         const footer = document.getElementById('footer');
         footer.remove();
+    }
+
+    socialMedia() {
+        const socialContainer = document.createElement('div');
+        socialContainer.classList.add('social-icons');
+
+        // Setup Facebook link
+        const facebook = document.createElement('a');
+        facebook.href = 'https://www.facebook.com';
+        const facebookIcon = document.createElement('i');
+        facebookIcon.classList.add('fab');
+        facebookIcon.classList.add('fa-facebook-f');
+        facebook.appendChild(facebookIcon);
+        socialContainer.appendChild(facebook);
+
+        // Setup Twitter link
+        const twitter = document.createElement('a');
+        twitter.href = 'https://twitter.com';
+        const twitterIcon = document.createElement('i');
+        twitterIcon.classList.add('fab');
+        twitterIcon.classList.add('fa-twitter');
+        twitter.appendChild(twitterIcon);
+        socialContainer.appendChild(twitter);
+
+        // Setup Instagram link
+        const instagram = document.createElement('a');
+        instagram.href = 'https://instagram.com';
+        const instagramIcon = document.createElement('i');
+        instagramIcon.classList.add('fab');
+        instagramIcon.classList.add('fa-instagram');
+        instagram.appendChild(instagramIcon);
+        socialContainer.appendChild(instagram);
+
+        // Setup Youtube link
+        const youTube = document.createElement('a');
+        youTube.href = 'https://www.youtube.com';
+        const youTubeIcon = document.createElement('i');
+        youTubeIcon.classList.add('fab');
+        youTubeIcon.classList.add('fa-youtube');
+        youTube.appendChild(youTubeIcon);
+        socialContainer.appendChild(youTube);
+        return socialContainer;
     }
 }
