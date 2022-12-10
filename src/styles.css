@@ -8,6 +8,10 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --tab-color: rgb(250, 209, 154);
+}
 body {
   
   background-image: url(../src/popcorn-background.jpg);
@@ -63,10 +67,12 @@ h1 {
   
   text-align: center;
   padding-top: 10px;
+
+  background-color: var(--tab-color);
 }
 
 .main-content {
-  margin-bottom: 25px;
+  background-color: var(--tab-color);
 }
 
 h2, h3 {
@@ -76,6 +82,7 @@ h2, h3 {
 }
 
 .paragraph-container {
+  background-color: burlywood;
   border: solid black 1px;
   border-radius: 5px;
 
@@ -87,6 +94,7 @@ h2, h3 {
 }
 
 .hours-container, .location-info {
+  background-color: burlywood;
   border: solid black 1px;
   border-radius: 5px;
 
@@ -109,7 +117,8 @@ h2, h3 {
   margin-top: 15px;
 }
 
-.daily-hours:last-of-type, .address:last-of-type {
+.daily-hours:last-of-type,
+.address:last-of-type {
   margin-bottom: 15px;
 }
 
@@ -130,12 +139,15 @@ h2, h3 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
-  margin-bottom: 30px;
 
   width: 300px;
   height: 250px;
 
   border-radius: 10px;
+}
+
+.location-info {
+  margin-bottom: 25px;
 }
 @media only screen and (min-width: 700px) {
   .tabs {
