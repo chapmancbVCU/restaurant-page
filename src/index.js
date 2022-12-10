@@ -13,71 +13,46 @@ import './styles.css';
 import { Home } from './homeTabPage.js';
 import { Menu } from './menuTabPage';
 import { ContactUs, contactUsComponents } from './contactUsTabPage';
+import { Page } from './page';
 
 const container = document.querySelector('#content');
 
-function component() {
-    const pageContent = document.createElement('div');
-    pageContent.classList.add('header');
+// Create objects for each page.
+const home = new Home();
+const menu = new Menu();
+const contactUs = new ContactUs();
 
-    const title = document.createElement('h1');
-    title.textContent = 'Burnt Popcorn Eatery';
+// Render header section upon page load.
+container.appendChild(home.headerComponents());
 
-    pageContent.appendChild(title);
-    
-    // Setup tabs
-    const list = document.createElement('ul');
-    list.classList.add('tabs');
+// Render home tap upon page load.
+home.components();
+home.footerComponents();
 
-    // Setup home link
-    const homeTab = document.createElement('li');
-    homeTab.setAttribute('id', 'home-tab');
-    homeTab.textContent = 'Home';
-    list.appendChild(homeTab);
-
-    // Setup menu link
-    const menuTab = document.createElement('li');
-    menuTab.setAttribute('id', 'menu-tab');
-    menuTab.textContent = "Menu";
-    list.appendChild(menuTab);
-
-    // Setup contact us
-    const contactUsTab = document.createElement('li');
-    contactUsTab.setAttribute('id', 'contact-us-tab');
-    contactUsTab.textContent = "Contact Us";
-    list.appendChild(contactUsTab);
-
-    pageContent.appendChild(list);
-
-    return pageContent;
-}
-
-container.appendChild(component());
 
 /******************************************************************************
  * EVENT LISTENERS
  *****************************************************************************/
-const home = new Home();
-const homePage = document.querySelector('#home-tab');
-homePage.addEventListener('click', function() {
-    home.eraseDomContent();
-    home.components();
-});
-
-const menu = new Menu();
-const menuPage = document.querySelector('#menu-tab');
-menuPage.addEventListener('click', function() {
-    menu.eraseDomContent();
-    menu.components();
-});
-
-const contactUs = new ContactUs();
-const contactUsPage = document.querySelector('#contact-us-tab');
-contactUsPage.addEventListener('click', function() {
-    contactUs.eraseDomContent();
-    contactUs.components();
-});
-
-
-// Call home upon page load.
-home.components();
+ const homePage = document.querySelector('#home-tab');
+ homePage.addEventListener('click', function() {
+     home.eraseDomContent();
+     home.removeFooterFromDom();
+     home.components();
+     home.footerComponents();
+ });
+ 
+ const menuPage = document.querySelector('#menu-tab');
+ menuPage.addEventListener('click', function() {
+     menu.eraseDomContent();
+     menu.removeFooterFromDom();
+     menu.components();
+     menu.footerComponents();
+ });
+ 
+ const contactUsPage = document.querySelector('#contact-us-tab');
+ contactUsPage.addEventListener('click', function() {
+     contactUs.eraseDomContent();
+     menu.removeFooterFromDom();
+     contactUs.components();
+     menu.footerComponents();
+ });
