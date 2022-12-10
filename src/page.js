@@ -121,6 +121,10 @@ export class Page {
         footer.remove();
     }
 
+    /**
+     * This method creates the images and links for social media icons.
+     * @returns the HTMLDivElement object containing social icons.
+     */
     socialMedia() {
         const socialContainer = document.createElement('div');
         socialContainer.classList.add('social-icons');
@@ -160,6 +164,7 @@ export class Page {
         youTubeIcon.classList.add('fa-youtube');
         youTube.appendChild(youTubeIcon);
         socialContainer.appendChild(youTube);
+        
         return socialContainer;
     }
 }
