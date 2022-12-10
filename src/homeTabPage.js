@@ -9,7 +9,7 @@
  * IMPORTS
  *****************************************************************************/
 import { Page } from "./page";
-
+import PopcornBowl from './popcorn_bowl.jpg';
 /**
  * This class describes the methods for updating the main home page.  It 
  * extends the Page class.
@@ -39,6 +39,9 @@ export class Home extends Page {
 
         // About us
         Home.aboutUs(mainContent);
+
+        // Add popcorn bowl image
+        Home.renderPopcornBowl(mainContent);
 
         // Describe hours
         const hoursHeader = document.createElement('h3');
@@ -139,5 +142,12 @@ export class Home extends Page {
         locationContainer.appendChild(cityStateZip);
 
         parentContainer.appendChild(locationContainer);
+    }
+
+    static renderPopcornBowl(parentContainer) {
+        const popCornBowlImage = new Image();
+        popCornBowlImage.classList.add('popcorn-bowl-image');
+        popCornBowlImage.src = PopcornBowl;
+        parentContainer.appendChild(popCornBowlImage);
     }
 }
