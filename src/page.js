@@ -6,8 +6,15 @@
  *               contact us pages.
 ******************************************************************************/
 
+/**
+ * This class is the super class for all of the other classes that implements 
+ * the other pages for this site.
+ */
 export class Page {
-
+    /**
+     * Default constructor.  It initializes the container object that 
+     * queries the #content id.
+     */
     constructor() {
         this.container = document.querySelector('#content');
     }

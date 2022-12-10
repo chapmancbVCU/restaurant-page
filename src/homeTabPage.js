@@ -8,14 +8,24 @@
 /******************************************************************************
  * IMPORTS
  *****************************************************************************/
-
-
 import { Page } from "./page";
+
+/**
+ * This class describes the methods for updating the main home page.  It 
+ * extends the Page class.
+ */
 export class Home extends Page {
+    /**
+     * Default constructor
+     */
     constructor() {
         super();
     }
 
+    /**
+     * This method is responsible for setting up the page.  It calls all of 
+     * the other methods that are used to render content.
+     */
     components() {
         const mainContent = document.createElement("div");
         mainContent.setAttribute('id', 'main');
@@ -44,6 +54,12 @@ export class Home extends Page {
         
     }
 
+    /**
+     * This function is responsible for rendering the first paragraph of the 
+     * webpage that describes the business.
+     * @param {HTMLDivElement} parentContainer the container that is the parent for all of 
+     * the elements that will be created with this method.
+     */
     static aboutUs(parentContainer) {
         const aboutUsContainer = document.createElement('div');
         aboutUsContainer.classList.add('paragraph-container');
@@ -55,6 +71,12 @@ export class Home extends Page {
         parentContainer.appendChild(aboutUsContainer);
     }
 
+    /**
+     * This function is responsible for rendering the hours section.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of the elements that will be created with 
+     * this method.
+     */
     static hours(parentContainer) {
         const sunday = document.createElement('p');
         sunday.textContent = 'Sunday: Closed';
@@ -92,9 +114,15 @@ export class Home extends Page {
         parentContainer.appendChild(saturday);
     }
 
+    /**
+     * This method is responsible for rendering the location section of the 
+     * webpage.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
     static location(parentContainer) {
         const address = document.createElement('h3');
-        address.textContent = 'Locations';
+        address.textContent = 'Visit Us';
         parentContainer.appendChild(address);
 
         const locationContainer = document.createElement('div');
