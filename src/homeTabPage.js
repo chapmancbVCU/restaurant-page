@@ -10,6 +10,8 @@
  *****************************************************************************/
 import { Page } from "./page";
 import PopcornBowl from './popcorn_bowl.jpg';
+import PopcornMug from './popcorn_mug.jpg';
+
 /**
  * This class describes the methods for updating the main home page.  It 
  * extends the Page class.
@@ -52,9 +54,11 @@ export class Home extends Page {
         Home.hours(hoursContainer);
         mainContent.appendChild(hoursContainer);
 
+        // Add popcorn mug image
+        Home.renderPopcornMug(mainContent);
+
         // Location
         Home.location(mainContent);
-        
     }
 
     /**
@@ -112,7 +116,7 @@ export class Home extends Page {
         parentContainer.appendChild(friday);
 
         const saturday = document.createElement('p');
-        saturday.textContent = 'Saturday: 11PA - 10PM';
+        saturday.textContent = 'Saturday: 11AM - 10PM';
         saturday.classList.add('daily-hours');
         parentContainer.appendChild(saturday);
     }
@@ -149,5 +153,12 @@ export class Home extends Page {
         popCornBowlImage.classList.add('popcorn-bowl-image');
         popCornBowlImage.src = PopcornBowl;
         parentContainer.appendChild(popCornBowlImage);
+    }
+
+    static renderPopcornMug(parentContainer) {
+        const popCornMugImage = new Image();
+        popCornMugImage.classList.add('popcorn-mug-image');
+        popCornMugImage.src = PopcornMug;
+        parentContainer.appendChild(popCornMugImage);
     }
 }
