@@ -42,6 +42,9 @@ export class ContactUs extends Page {
 
         // Contact info
         ContactUs.contactInfo(mainContent);
+
+        // Form
+        ContactUs.moreInfo(mainContent);
     }
 
     static contactInfo(parentContainer) {
@@ -78,6 +81,42 @@ export class ContactUs extends Page {
         contactUsContainer.appendChild(catering);
 
         parentContainer.appendChild(contactUsContainer);
+    }
 
+    static moreInfo(parentContainer) {
+        const moreInfo = document.createElement('h3');
+        moreInfo.textContent = 'More Info';
+        parentContainer.appendChild(moreInfo);
+
+        const formContainer = document.createElement('div');
+        formContainer.classList.add('form-container');
+
+        const moreInfoMessage = document.createElement('h4');
+        moreInfoMessage.textContent = "Join our mailing list or inquire for more information about our services";
+        formContainer.appendChild(moreInfoMessage);
+
+        const form = document.createElement('form');
+        form.action = ' ';
+        form.method = 'get';
+        form.classList.add('info-form');
+
+        // Name
+        const fullName = document.createElement('div');
+        fullName.classList.add('form-row');
+        const fullNameLabel = document.createElement('label');
+        fullNameLabel.setAttribute('for', 'full-name');
+        fullNameLabel.textContent = 'Name';
+        fullName.appendChild(fullNameLabel);
+        const fullNameInput = document.createElement('input');
+        fullNameInput.setAttribute('id', 'full-name');
+        fullNameInput.setAttribute('name', 'full-name');
+        fullNameInput.setAttribute('type', 'text');
+        fullName.append(fullNameInput);
+        form.appendChild(fullName);
+        
+
+
+        formContainer.appendChild(form);
+        parentContainer.appendChild(formContainer);
     }
 }
