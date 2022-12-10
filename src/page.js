@@ -30,9 +30,27 @@ export class Page {
         const footer = document.createElement('div');
         footer.setAttribute('id', 'footer');
         footer.classList.add('page-footer');
+        
         const siteCurator = document.createElement('h4');
         siteCurator.textContent = 'Created by: Chad Chapman';
+        siteCurator.classList.add('footer-text');
         footer.appendChild(siteCurator);
+
+        const linkedIn = document.createElement('p');
+        linkedIn.classList.add('footer-text');
+        const linkedInURL = document.createElement('a');
+        linkedInURL.textContent = "LinkedIn";
+        linkedInURL.href = 'https://www.linkedin.com/in/chadchapman2010/';
+        linkedIn.appendChild(linkedInURL);
+        footer.appendChild(linkedIn);
+
+        const gitHub = document.createElement('p');
+        gitHub.classList.add('footer-text');
+        const gitHubURL = document.createElement('a');
+        gitHubURL.textContent = 'GitHub';
+        gitHubURL.href = 'https://github.com/chapmancbVCU';
+        gitHub.appendChild(gitHubURL);
+        footer.appendChild(gitHub);
         this.container.appendChild(footer);
     }
 
