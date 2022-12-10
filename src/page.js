@@ -58,6 +58,15 @@ export class Page {
         gitHubURL.href = 'https://github.com/chapmancbVCU';
         gitHub.appendChild(gitHubURL);
         footer.appendChild(gitHub);
+
+        const docs = document.createElement('p');
+        docs.classList.add('footer-text');
+        const docsURL = document.createElement('a');
+        docsURL.textContent = 'JSDOC For This Project';
+        docsURL.href = 'https://chapmancbvcu.github.io/restaurant-page/out/index.html';
+        docs.appendChild(docsURL);
+        footer.appendChild(docs);
+
         this.container.appendChild(footer);
     }
 

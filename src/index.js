@@ -12,7 +12,7 @@ import _ from 'lodash';
 import './styles.css';
 import { Home } from './homeTabPage.js';
 import { Menu } from './menuTabPage';
-import { ContactUs, contactUsComponents } from './contactUsTabPage';
+import { ContactUs } from './contactUsTabPage';
 
 
 /******************************************************************************
