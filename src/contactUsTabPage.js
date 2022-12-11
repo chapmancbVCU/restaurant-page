@@ -19,7 +19,7 @@ export class ContactUs extends Page {
      * Default constructor
      */
     constructor() {
-        super();
+        super(); 
     }
 
     /**
@@ -96,6 +96,51 @@ export class ContactUs extends Page {
     }
 
     /**
+     * Function that receives number as an input and formats it based on the 
+     * length.  For strings less than three it does nothing. For values less 
+     * than 7 you get a formatted string that looks like xxx-xxx.  If the 
+     * input string is more than 7 then the formatted string looks like 
+     * xxx-xxx-xx.  Client side validation is recommened as well.  
+     * 
+     * Do not call this function directly within the html file.  The 
+     * phoneNumberFormatter function will be used to call this function in 
+     * order to set the correct format.
+     * @param {string} value the string of numbers
+     * @returns The properly formatted string based on length.
+     */
+    formatPhoneNumber(value) {
+        // If input is falsy eg if the suer delets the input, then just return.
+        if(!value) return value;
+    
+        // Clean the input for any non-digit values.
+        const phoneNumber = value.replace(/[^\d]/g, '');
+    
+        /* phoneNumberLength is used to know when to apply or formatting for the
+           phone number. */
+        const phoneNumberLength = phoneNumber.length;
+    
+        /* We need to return the value with no formatting if its less than four
+           digits.  This is to avoid weird behavior that occurs if you format
+           the area code too early. */
+        if(phoneNumberLength < 4) {
+            return phoneNumber;
+        }
+    
+        /* If phoneNumberLength is greater than 4 and less than 7 we start to
+           return the formatted number. */
+        if(phoneNumberLength < 7) {
+            return `${phoneNumber.slice(0,3)}-${phoneNumber.slice(3)}`;
+        }
+    
+        /* Finally, if the phoneNumberLength is greater than seven, we add the 
+           last bit of formatting and return it. */
+        return `${phoneNumber.slice(0,3)}-${phoneNumber.slice(
+            3,
+            6,
+        )}-${phoneNumber.slice(6,9)}`;
+    }
+
+    /**
      * This method displays the form that allows the user to inquiry 
      * about services.
      * @param {HTMLDivElement} parentContainer the container that is the 
@@ -151,7 +196,41 @@ export class ContactUs extends Page {
         email.appendChild(emailInput);
         form.appendChild(email);
 
+        // Phone number
+        const phoneNumber = document.createElement('div');
+        phoneNumber.classList.add('form-row');
+
+        const phoneNumberLabel = document.createElement('label');
+        phoneNumberLabel.setAttribute('for', 'phone');
+        phoneNumberLabel.textContent = 'Phone Number';
+        phoneNumber.appendChild(phoneNumberLabel);
+
+        const phoneNumberInpuut = document.createElement('input');
+        phoneNumberInpuut.setAttribute('id', 'phone');
+        phoneNumberInpuut.setAttribute('name', 'phone');
+        phoneNumberInpuut.setAttribute('type', 'tel');
+        phoneNumberInpuut.setAttribute('pattern', '[0-9]{3}-[0-9]{3}-[0-9]{4}');
+        phoneNumberInpuut.setAttribute('minlength', '12');
+        phoneNumberInpuut.setAttribute('maxlength', '12');
+        phoneNumberInpuut.setAttribute('placeholder', 'ex: 123-456-7890');
+        phoneNumber.appendChild(phoneNumberInpuut);
+        form.appendChild(phoneNumber);
+
+        const hearAboutUs = document.createElement('p');
+        hearAboutUs.textContent = 'How did you hear about us?';
+
+
+
+        
+        form.appendChild(hearAboutUs);
+
+
         formContainer.appendChild(form);
         parentContainer.appendChild(formContainer);
+
+        
+
+        
     }
 }
+

@@ -207,7 +207,8 @@ h2, h3 {
 }
 
 .form-row input[type='text'],
-.form-row input[type='email'] {
+.form-row input[type='email'],
+.form-row input[type='tel'] {
   background-color: #FFFFFF;
   border: 1px solid #D6D9DC;
   border-radius: 3px;
@@ -243,7 +244,8 @@ h2, h3 {
   }
 
   .form-row input[type='text'],
-  .form-row input[type='email'] {
+  .form-row input[type='email'],
+  .form-row input[type='tel'] {
     width: 250px;
     height: initial;
   }

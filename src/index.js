@@ -60,4 +60,13 @@ home.footerComponents();
      menu.removeFooterFromDom();
      contactUs.components();
      menu.footerComponents();
+
+     // Input validation for phone number
+     const userPhoneInput = document.getElementById('phone');
+     userPhoneInput.addEventListener('keydown', () => {
+        const formattedInputValue = 
+                contactUs.formatPhoneNumber(userPhoneInput.value);
+        userPhoneInput.value = formattedInputValue;
+    });
+     
  });

@@ -64,8 +64,8 @@ export class Home extends Page {
     /**
      * This function is responsible for rendering the first paragraph of the 
      * webpage that describes the business.
-     * @param {HTMLDivElement} parentContainer the container that is the parent for all of 
-     * the elements that will be created with this method.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of the elements that will be created with this method.
      */
     static aboutUs(parentContainer) {
         const aboutUsContainer = document.createElement('div');
