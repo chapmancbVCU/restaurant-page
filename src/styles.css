@@ -242,9 +242,13 @@ h2, h3 {
 
   min-height: 180px;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   padding: 7px;
   resize: none;
+}
+
+.form-row .mail-list-label {
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 700px) {
   .tabs {
@@ -287,7 +291,13 @@ h2, h3 {
   .form-row select {
     width: 266px;
   }
+
   .form-row textarea {
     width: 250px;
+  }
+
+  .form-row .mail-list-label {
+    margin-left: 125px;
+    width: auto;
   }
 }

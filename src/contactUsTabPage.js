@@ -155,7 +155,7 @@ export class ContactUs extends Page {
         formContainer.classList.add('form-container');
 
         const moreInfoMessage = document.createElement('h4');
-        moreInfoMessage.textContent = "Join our mailing list or inquire for more information about our services";
+        moreInfoMessage.textContent = "Provide us feedback or inquire for more information about our services";
         formContainer.appendChild(moreInfoMessage);
 
         const form = document.createElement('form');
@@ -275,16 +275,33 @@ export class ContactUs extends Page {
         const commentsTextArea = document.createElement('textarea');
         commentsTextArea.setAttribute('id', 'comments');
         commentsTextArea.setAttribute('name', 'comments');
-
         comments.appendChild(commentsTextArea);
 
         form.appendChild(comments);
+
+        // Join E-mail list
+        const mailList = document.createElement('div');
+        mailList.classList.add('form-row');
+
+        const mailListLabel = document.createElement('label');
+        mailListLabel.classList.add('mail-list-label');
+        mailListLabel.setAttribute('for', 'mail-list');
+
+        const mailListCheckBox = document.createElement('input');
+        mailListCheckBox.setAttribute('id', 'mail-list');
+        mailListCheckBox.setAttribute('name', 'mail-list');
+        mailListCheckBox.setAttribute('type', 'checkbox');
+        mailListCheckBox.setAttribute('value', 'add-me-to-list');
+        mailListLabel.appendChild(mailListCheckBox);
+
+        const mailListMessage = document.createElement('span');
+        mailListMessage.textContent = 'Add me to E-mail list';
+        mailListLabel.appendChild(mailListMessage);
+        mailList.appendChild(mailListLabel);
+
+        form.appendChild(mailList);
         formContainer.appendChild(form);
-        parentContainer.appendChild(formContainer);
-
-        
-
-        
+        parentContainer.appendChild(formContainer); 
     }
 
     /**
