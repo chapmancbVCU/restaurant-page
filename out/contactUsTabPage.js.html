@@ -47,7 +47,7 @@ export class ContactUs extends Page {
      * Default constructor
      */
     constructor() {
-        super();
+        super(); 
     }
 
     /**
@@ -124,6 +124,51 @@ export class ContactUs extends Page {
     }
 
     /**
+     * Function that receives number as an input and formats it based on the 
+     * length.  For strings less than three it does nothing. For values less 
+     * than 7 you get a formatted string that looks like xxx-xxx.  If the 
+     * input string is more than 7 then the formatted string looks like 
+     * xxx-xxx-xx.  Client side validation is recommened as well.  
+     * 
+     * Do not call this function directly within the html file.  The 
+     * phoneNumberFormatter function will be used to call this function in 
+     * order to set the correct format.
+     * @param {string} value the string of numbers
+     * @returns The properly formatted string based on length.
+     */
+    formatPhoneNumber(value) {
+        // If input is falsy eg if the suer delets the input, then just return.
+        if(!value) return value;
+    
+        // Clean the input for any non-digit values.
+        const phoneNumber = value.replace(/[^\d]/g, '');
+    
+        /* phoneNumberLength is used to know when to apply or formatting for the
+           phone number. */
+        const phoneNumberLength = phoneNumber.length;
+    
+        /* We need to return the value with no formatting if its less than four
+           digits.  This is to avoid weird behavior that occurs if you format
+           the area code too early. */
+        if(phoneNumberLength &lt; 4) {
+            return phoneNumber;
+        }
+    
+        /* If phoneNumberLength is greater than 4 and less than 7 we start to
+           return the formatted number. */
+        if(phoneNumberLength &lt; 7) {
+            return `${phoneNumber.slice(0,3)}-${phoneNumber.slice(3)}`;
+        }
+    
+        /* Finally, if the phoneNumberLength is greater than seven, we add the 
+           last bit of formatting and return it. */
+        return `${phoneNumber.slice(0,3)}-${phoneNumber.slice(
+            3,
+            6,
+        )}-${phoneNumber.slice(6,9)}`;
+    }
+
+    /**
      * This method displays the form that allows the user to inquiry 
      * about services.
      * @param {HTMLDivElement} parentContainer the container that is the 
@@ -179,10 +224,101 @@ export class ContactUs extends Page {
         email.appendChild(emailInput);
         form.appendChild(email);
 
+        // Phone number
+        const phoneNumber = document.createElement('div');
+        phoneNumber.classList.add('form-row');
+
+        const phoneNumberLabel = document.createElement('label');
+        phoneNumberLabel.setAttribute('for', 'phone');
+        phoneNumberLabel.textContent = 'Phone Number';
+        phoneNumber.appendChild(phoneNumberLabel);
+
+        const phoneNumberInpuut = document.createElement('input');
+        phoneNumberInpuut.setAttribute('id', 'phone');
+        phoneNumberInpuut.setAttribute('name', 'phone');
+        phoneNumberInpuut.setAttribute('type', 'tel');
+        phoneNumberInpuut.setAttribute('pattern', '[0-9]{3}-[0-9]{3}-[0-9]{4}');
+        phoneNumberInpuut.setAttribute('minlength', '12');
+        phoneNumberInpuut.setAttribute('maxlength', '12');
+        phoneNumberInpuut.setAttribute('placeholder', 'ex: 123-456-7890');
+        phoneNumber.appendChild(phoneNumberInpuut);
+        form.appendChild(phoneNumber);
+
+        // How did you hear about us?
+        const hearAboutUsMessage = document.createElement('p');
+        hearAboutUsMessage.classList.add('hear-about-us-message');
+        hearAboutUsMessage.textContent = 'How did you hear about us?';
+        form.appendChild(hearAboutUsMessage);
+
+        const hearAboutUs = document.createElement('div');
+        hearAboutUs.classList.add('form-row');
+
+        const hearAboutUsLabel = document.createElement('label');
+        hearAboutUsLabel.setAttribute('for', 'about-us');
+        hearAboutUsLabel.textContent = 'Select One';
+        hearAboutUs.appendChild(hearAboutUsLabel);
+
+        const hearAboutUsSelect = document.createElement('select');
+        hearAboutUsSelect.setAttribute('id', 'about-us');
+        hearAboutUsSelect.setAttribute('name', 'about-us');
+
+        const social = document.createElement('option')
+        social.setAttribute('value', 'social-media');
+        social.textContent = 'Social Media';
+        hearAboutUsSelect.appendChild(social);
+
+        const storeVisit = document.createElement('option');
+        storeVisit.setAttribute('value', 'store-visit');
+        storeVisit.textContent = 'Store Visit';
+        hearAboutUsSelect.appendChild(storeVisit);
+
+        const foodTruck = document.createElement('option');
+        foodTruck.setAttribute('value', 'food-truck');
+        foodTruck.textContent = 'Food Truck';
+        hearAboutUsSelect.appendChild(foodTruck);
+
+        const friendsOrFamily = document.createElement('option');
+        friendsOrFamily.setAttribute('value', 'friends-or-family');
+        friendsOrFamily.textContent = 'Friends or Family';
+        hearAboutUsSelect.appendChild(friendsOrFamily);
+
+        const other = document.createElement('option');
+        other.setAttribute('value', 'other');
+        other.textContent = 'Other';
+        hearAboutUsSelect.appendChild(other);
+
+        hearAboutUs.appendChild(hearAboutUsSelect);
+
+        
+
+        form.appendChild(hearAboutUs);
+
+
         formContainer.appendChild(form);
         parentContainer.appendChild(formContainer);
+
+        
+
+        
     }
-}</code></pre>
+
+    /**
+     * Uses getElementbyId('phone') to get phone number input from webpage.  
+     * The way this function works is we grab the value of what the user is 
+     * typing into the input.  Next we format the value and set the value of 
+     * the input field in the html document.
+     */
+    phoneNumberFormatter() {
+        const userPhoneInput = document.getElementById('phone');
+        userPhoneInput.addEventListener('keydown', () => {
+            const formattedInputValue = 
+                this.formatPhoneNumber(userPhoneInput.value);
+            userPhoneInput.value = formattedInputValue;
+        });
+    }
+}
+
+</code></pre>
         </article>
     </section>
 
@@ -198,7 +334,7 @@ export class ContactUs extends Page {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sat Dec 10 2022 20:00:44 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sun Dec 11 2022 13:08:44 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
