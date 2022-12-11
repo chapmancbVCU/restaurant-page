@@ -221,7 +221,7 @@ export class ContactUs extends Page {
 
 
 
-        
+
         form.appendChild(hearAboutUs);
 
 
@@ -231,6 +231,21 @@ export class ContactUs extends Page {
         
 
         
+    }
+
+    /**
+     * Uses getElementbyId('phone') to get phone number input from webpage.  
+     * The way this function works is we grab the value of what the user is 
+     * typing into the input.  Next we format the value and set the value of 
+     * the input field in the html document.
+     */
+    phoneNumberFormatter() {
+        const userPhoneInput = document.getElementById('phone');
+        userPhoneInput.addEventListener('keydown', () => {
+            const formattedInputValue = 
+                this.formatPhoneNumber(userPhoneInput.value);
+            userPhoneInput.value = formattedInputValue;
+        });
     }
 }
 
