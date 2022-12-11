@@ -47,6 +47,12 @@ export class ContactUs extends Page {
         ContactUs.moreInfo(mainContent);
     }
 
+    /**
+     * This method is responsible for rendering the contact information 
+     * section.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of the elements that will be created with this method.
+     */
     static contactInfo(parentContainer) {
         const contactInfo = document.createElement('h3');
         contactInfo.textContent = 'How To Reach Us';
@@ -66,6 +72,12 @@ export class ContactUs extends Page {
         parentContainer.appendChild(contactInfoContainer);
     }
 
+    /**
+     * This method is responsible for rendering the introduction section of 
+     * the Contact Us tab of the website.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of the elements that will be created with this method.
+     */
     static contactIntro(parentContainer) {
         const contactUsContainer = document.createElement('div');
         contactUsContainer.classList.add('paragraph-container');
@@ -83,6 +95,12 @@ export class ContactUs extends Page {
         parentContainer.appendChild(contactUsContainer);
     }
 
+    /**
+     * This method displays the form that allows the user to inquiry 
+     * about services.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of the elements that will be created with this method.
+     */
     static moreInfo(parentContainer) {
         const moreInfo = document.createElement('h3');
         moreInfo.textContent = 'More Info';
@@ -132,7 +150,7 @@ export class ContactUs extends Page {
         emailInput.placeholder = 'joe@example.com';
         email.appendChild(emailInput);
         form.appendChild(email);
-        
+
         formContainer.appendChild(form);
         parentContainer.appendChild(formContainer);
     }

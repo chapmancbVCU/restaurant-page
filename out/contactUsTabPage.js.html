@@ -57,12 +57,130 @@ export class ContactUs extends Page {
     components() {
         const mainContent = document.createElement("div");
         mainContent.setAttribute('id', 'main');
+        mainContent.classList.add('main-content');
         this.container.appendChild(mainContent);
 
         // Setup title
         const pageTitle = document.createElement('h2');
         pageTitle.textContent = 'Contact Us';
         mainContent.appendChild(pageTitle);
+
+        // Contact us intro
+        ContactUs.contactIntro(mainContent);
+
+        // Contact info
+        ContactUs.contactInfo(mainContent);
+
+        // Form
+        ContactUs.moreInfo(mainContent);
+    }
+
+    /**
+     * This method is responsible for rendering the contact information 
+     * section.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of the elements that will be created with this method.
+     */
+    static contactInfo(parentContainer) {
+        const contactInfo = document.createElement('h3');
+        contactInfo.textContent = 'How To Reach Us';
+        parentContainer.appendChild(contactInfo);
+
+        const contactInfoContainer = document.createElement('div');
+        contactInfoContainer.classList.add('paragraph-container');
+
+        const phoneNumber = document.createElement('p');
+        phoneNumber.textContent = 'Call Us: 123-456-7890';
+        contactInfoContainer.appendChild(phoneNumber);
+
+        const email = document.createElement('p');
+        email.textContent = 'E-mail: burntpopcorn@fakedomain.com';
+        contactInfoContainer.appendChild(email);
+
+        parentContainer.appendChild(contactInfoContainer);
+    }
+
+    /**
+     * This method is responsible for rendering the introduction section of 
+     * the Contact Us tab of the website.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of the elements that will be created with this method.
+     */
+    static contactIntro(parentContainer) {
+        const contactUsContainer = document.createElement('div');
+        contactUsContainer.classList.add('paragraph-container');
+
+        const reachUs = document.createElement('p');
+        reachUs.classList.add('contact-us');
+        reachUs.textContent = "We value every customer's feedback.  Whether it be complements or otherwise, you can reach us through many different methods including social media or in person at our location in downtown Westchestertonfieldville.";
+        contactUsContainer.appendChild(reachUs);
+
+        const catering = document.createElement('p');
+        catering.classList.add('contact-us');
+        catering.textContent = "We also offer catering services and our food truck operates daily at the local college campus.";
+        contactUsContainer.appendChild(catering);
+
+        parentContainer.appendChild(contactUsContainer);
+    }
+
+    /**
+     * This method displays the form that allows the user to inquiry 
+     * about services.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of the elements that will be created with this method.
+     */
+    static moreInfo(parentContainer) {
+        const moreInfo = document.createElement('h3');
+        moreInfo.textContent = 'More Info';
+        parentContainer.appendChild(moreInfo);
+
+        const formContainer = document.createElement('div');
+        formContainer.classList.add('form-container');
+
+        const moreInfoMessage = document.createElement('h4');
+        moreInfoMessage.textContent = "Join our mailing list or inquire for more information about our services";
+        formContainer.appendChild(moreInfoMessage);
+
+        const form = document.createElement('form');
+        form.action = ' ';
+        form.method = 'get';
+        form.classList.add('info-form');
+
+        // Name
+        const fullName = document.createElement('div');
+        fullName.classList.add('form-row');
+
+        const fullNameLabel = document.createElement('label');
+        fullNameLabel.setAttribute('for', 'full-name');
+        fullNameLabel.textContent = 'Name';
+        fullName.appendChild(fullNameLabel);
+
+        const fullNameInput = document.createElement('input');
+        fullNameInput.setAttribute('id', 'full-name');
+        fullNameInput.setAttribute('name', 'full-name');
+        fullNameInput.setAttribute('type', 'text');
+        fullName.append(fullNameInput);
+        form.appendChild(fullName);
+        
+        // Email
+        const email = document.createElement('div');
+        email.classList.add('form-row');
+
+        const emailLabel = document.createElement('label');
+        emailLabel.setAttribute('for', 'email');
+        emailLabel.textContent = 'E-mail';
+        email.appendChild(emailLabel);
+
+        const emailInput = document.createElement('input');
+        emailInput.setAttribute('id', 'email');
+        emailInput.setAttribute('name', 'email');
+        emailInput.setAttribute('type', 'email');
+        emailInput.placeholder = 'joe@example.com';
+        email.appendChild(emailInput);
+        form.appendChild(email);
+
+        formContainer.appendChild(form);
+        parentContainer.appendChild(formContainer);
     }
 }</code></pre>
         </article>
@@ -80,7 +198,7 @@ export class ContactUs extends Page {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Fri Dec 09 2022 22:28:02 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sat Dec 10 2022 20:00:44 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
