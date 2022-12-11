@@ -159,7 +159,7 @@ export class ContactUs extends Page {
         formContainer.appendChild(moreInfoMessage);
 
         const form = document.createElement('form');
-        form.action = ' ';
+        form.action = '';
         form.method = 'get';
         form.classList.add('info-form');
         form.setAttribute('name', 'info-form');
