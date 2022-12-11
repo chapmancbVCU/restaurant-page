@@ -103,10 +103,12 @@ export class ContactUs extends Page {
         // Name
         const fullName = document.createElement('div');
         fullName.classList.add('form-row');
+
         const fullNameLabel = document.createElement('label');
         fullNameLabel.setAttribute('for', 'full-name');
         fullNameLabel.textContent = 'Name';
         fullName.appendChild(fullNameLabel);
+
         const fullNameInput = document.createElement('input');
         fullNameInput.setAttribute('id', 'full-name');
         fullNameInput.setAttribute('name', 'full-name');
@@ -115,7 +117,22 @@ export class ContactUs extends Page {
         form.appendChild(fullName);
         
         // Email
+        const email = document.createElement('div');
+        email.classList.add('form-row');
 
+        const emailLabel = document.createElement('label');
+        emailLabel.setAttribute('for', 'email');
+        emailLabel.textContent = 'E-mail';
+        email.appendChild(emailLabel);
+
+        const emailInput = document.createElement('input');
+        emailInput.setAttribute('id', 'email');
+        emailInput.setAttribute('name', 'email');
+        emailInput.setAttribute('type', 'email');
+        emailInput.placeholder = 'joe@example.com';
+        email.appendChild(emailInput);
+        form.appendChild(email);
+        
         formContainer.appendChild(form);
         parentContainer.appendChild(formContainer);
     }
