@@ -216,11 +216,52 @@ export class ContactUs extends Page {
         phoneNumber.appendChild(phoneNumberInpuut);
         form.appendChild(phoneNumber);
 
-        const hearAboutUs = document.createElement('p');
-        hearAboutUs.textContent = 'How did you hear about us?';
+        // How did you hear about us?
+        const hearAboutUsMessage = document.createElement('p');
+        hearAboutUsMessage.classList.add('hear-about-us-message');
+        hearAboutUsMessage.textContent = 'How did you hear about us?';
+        form.appendChild(hearAboutUsMessage);
 
+        const hearAboutUs = document.createElement('div');
+        hearAboutUs.classList.add('form-row');
 
+        const hearAboutUsLabel = document.createElement('label');
+        hearAboutUsLabel.setAttribute('for', 'about-us');
+        hearAboutUsLabel.textContent = 'Select One';
+        hearAboutUs.appendChild(hearAboutUsLabel);
 
+        const hearAboutUsSelect = document.createElement('select');
+        hearAboutUsSelect.setAttribute('id', 'about-us');
+        hearAboutUsSelect.setAttribute('name', 'about-us');
+
+        const social = document.createElement('option')
+        social.setAttribute('value', 'social-media');
+        social.textContent = 'Social Media';
+        hearAboutUsSelect.appendChild(social);
+
+        const storeVisit = document.createElement('option');
+        storeVisit.setAttribute('value', 'store-visit');
+        storeVisit.textContent = 'Store Visit';
+        hearAboutUsSelect.appendChild(storeVisit);
+
+        const foodTruck = document.createElement('option');
+        foodTruck.setAttribute('value', 'food-truck');
+        foodTruck.textContent = 'Food Truck';
+        hearAboutUsSelect.appendChild(foodTruck);
+
+        const friendsOrFamily = document.createElement('option');
+        friendsOrFamily.setAttribute('value', 'friends-or-family');
+        friendsOrFamily.textContent = 'Friends or Family';
+        hearAboutUsSelect.appendChild(friendsOrFamily);
+
+        const other = document.createElement('option');
+        other.setAttribute('value', 'other');
+        other.textContent = 'Other';
+        hearAboutUsSelect.appendChild(other);
+
+        hearAboutUs.appendChild(hearAboutUsSelect);
+
+        
 
         form.appendChild(hearAboutUs);
 
