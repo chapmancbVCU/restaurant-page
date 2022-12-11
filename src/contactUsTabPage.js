@@ -261,11 +261,24 @@ export class ContactUs extends Page {
 
         hearAboutUs.appendChild(hearAboutUsSelect);
 
-        
-
         form.appendChild(hearAboutUs);
 
+        // Comments
+        const comments = document.createElement('div');
+        comments.classList.add('form-row');
 
+        const commentsLabel = document.createElement('label');
+        commentsLabel.setAttribute('for', 'comments');
+        commentsLabel.textContent = 'Write to Us';
+        comments.appendChild(commentsLabel);
+
+        const commentsTextArea = document.createElement('textarea');
+        commentsTextArea.setAttribute('id', 'comments');
+        commentsTextArea.setAttribute('name', 'comments');
+
+        comments.appendChild(commentsTextArea);
+
+        form.appendChild(comments);
         formContainer.appendChild(form);
         parentContainer.appendChild(formContainer);
 

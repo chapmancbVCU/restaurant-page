@@ -226,12 +226,26 @@ h2, h3 {
 }
 
 .form-row select {
-  width: 100%;
+  border-radius: 3px;
+  width: 280px;
   padding: 5px;
   font-size: 14px;            /* This won't work in Chrome of Safari */
   -webkit-appearance: none;   /* This will make it work */
 }
 
+.form-row textarea {
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+
+  min-height: 180px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 7px;
+  resize: none;
+}
 @media only screen and (min-width: 700px) {
   .tabs {
     column-gap: 100px;
@@ -270,5 +284,10 @@ h2, h3 {
     padding-right: 15px;
   }
 
-
+  .form-row select {
+    width: 266px;
+  }
+  .form-row textarea {
+    width: 250px;
+  }
 }
