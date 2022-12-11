@@ -183,13 +183,14 @@ export class ContactUs extends Page {
         formContainer.classList.add('form-container');
 
         const moreInfoMessage = document.createElement('h4');
-        moreInfoMessage.textContent = "Join our mailing list or inquire for more information about our services";
+        moreInfoMessage.textContent = "Provide us feedback or inquire for more information about our services";
         formContainer.appendChild(moreInfoMessage);
 
         const form = document.createElement('form');
-        form.action = ' ';
+        form.action = '';
         form.method = 'get';
         form.classList.add('info-form');
+        form.setAttribute('name', 'info-form');
 
         // Name
         const fullName = document.createElement('div');
@@ -204,6 +205,9 @@ export class ContactUs extends Page {
         fullNameInput.setAttribute('id', 'full-name');
         fullNameInput.setAttribute('name', 'full-name');
         fullNameInput.setAttribute('type', 'text');
+        fullNameInput.setAttribute('minlength', '5');
+        fullNameInput.setAttribute('maxlength', '50');
+        fullNameInput.setAttribute('required', '');
         fullName.append(fullNameInput);
         form.appendChild(fullName);
         
@@ -221,6 +225,7 @@ export class ContactUs extends Page {
         emailInput.setAttribute('name', 'email');
         emailInput.setAttribute('type', 'email');
         emailInput.placeholder = 'joe@example.com';
+        emailInput.setAttribute('required', '');
         email.appendChild(emailInput);
         form.appendChild(email);
 
@@ -241,6 +246,7 @@ export class ContactUs extends Page {
         phoneNumberInpuut.setAttribute('minlength', '12');
         phoneNumberInpuut.setAttribute('maxlength', '12');
         phoneNumberInpuut.setAttribute('placeholder', 'ex: 123-456-7890');
+        phoneNumberInpuut.setAttribute('required', '');
         phoneNumber.appendChild(phoneNumberInpuut);
         form.appendChild(phoneNumber);
 
@@ -289,17 +295,61 @@ export class ContactUs extends Page {
 
         hearAboutUs.appendChild(hearAboutUsSelect);
 
-        
-
         form.appendChild(hearAboutUs);
 
+        // Comments
+        const comments = document.createElement('div');
+        comments.classList.add('form-row');
 
+        const commentsLabel = document.createElement('label');
+        commentsLabel.setAttribute('for', 'comments');
+        commentsLabel.textContent = 'Write to Us';
+        comments.appendChild(commentsLabel);
+
+        const commentsTextArea = document.createElement('textarea');
+        commentsTextArea.setAttribute('id', 'comments');
+        commentsTextArea.setAttribute('name', 'comments');
+        commentsTextArea.setAttribute('minlength', '10');
+        commentsTextArea.setAttribute('maxlength', '500')
+        commentsTextArea.setAttribute('placeholder', 'Write us a message between 10 and 500 characters in length');
+        commentsTextArea.setAttribute('required', '');
+        comments.appendChild(commentsTextArea);
+
+        form.appendChild(comments);
+
+        // Join E-mail list
+        const mailList = document.createElement('div');
+        mailList.classList.add('form-row');
+
+        const mailListLabel = document.createElement('label');
+        mailListLabel.classList.add('mail-list-label');
+        mailListLabel.setAttribute('for', 'mail-list');
+
+        const mailListCheckBox = document.createElement('input');
+        mailListCheckBox.setAttribute('id', 'mail-list');
+        mailListCheckBox.setAttribute('name', 'mail-list');
+        mailListCheckBox.setAttribute('type', 'checkbox');
+        mailListCheckBox.setAttribute('value', 'add-me-to-list');
+        mailListLabel.appendChild(mailListCheckBox);
+
+        const mailListMessage = document.createElement('span');
+        mailListMessage.textContent = 'Add me to E-mail list';
+        mailListLabel.appendChild(mailListMessage);
+        mailList.appendChild(mailListLabel);
+
+        form.appendChild(mailList);
+
+        // Submit button
+        const submitButtonContainer = document.createElement('div');
+        submitButtonContainer.classList.add('form-row');
+        const submitButton = document.createElement('button');
+        submitButton.textContent = 'Submit';
+        submitButtonContainer.appendChild(submitButton);
+        form.appendChild(submitButtonContainer);
+
+        // Finally append the form container and form to their parent elements.
         formContainer.appendChild(form);
-        parentContainer.appendChild(formContainer);
-
-        
-
-        
+        parentContainer.appendChild(formContainer); 
     }
 
     /**
@@ -314,6 +364,21 @@ export class ContactUs extends Page {
             const formattedInputValue = 
                 this.formatPhoneNumber(userPhoneInput.value);
             userPhoneInput.value = formattedInputValue;
+        });
+    }
+
+    /**
+     * Performs validation for the E-mail field.
+     */
+    validateEmail(){
+        const emailInput = document.getElementById('email');
+        emailInput.addEventListener('input', (event) => {
+            if(emailInput.validity.typeMismatch) {
+                emailInput.setCustomValidity("Incorrect format");
+                emailInput.reportValidity();
+            } else {
+                emailInput.setCustomValidity("");
+            }
         });
     }
 }
@@ -334,7 +399,7 @@ export class ContactUs extends Page {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sun Dec 11 2022 13:08:44 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sun Dec 11 2022 18:42:32 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

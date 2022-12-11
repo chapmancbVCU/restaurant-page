@@ -178,7 +178,7 @@ export class ContactUs extends Page {
         fullNameInput.setAttribute('name', 'full-name');
         fullNameInput.setAttribute('type', 'text');
         fullNameInput.setAttribute('minlength', '5');
-        fullNameInput.setAttribute('maxlength', '30');
+        fullNameInput.setAttribute('maxlength', '50');
         fullNameInput.setAttribute('required', '');
         fullName.append(fullNameInput);
         form.appendChild(fullName);
