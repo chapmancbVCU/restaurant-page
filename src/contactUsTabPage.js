@@ -300,6 +300,16 @@ export class ContactUs extends Page {
         mailList.appendChild(mailListLabel);
 
         form.appendChild(mailList);
+
+        // Submit button
+        const submitButtonContainer = document.createElement('div');
+        submitButtonContainer.classList.add('form-row');
+        const submitButton = document.createElement('button');
+        submitButton.textContent = 'Submit';
+        submitButtonContainer.appendChild(submitButton);
+        form.appendChild(submitButtonContainer);
+
+        // Finally append the form container and form to their parent elements.
         formContainer.appendChild(form);
         parentContainer.appendChild(formContainer); 
     }

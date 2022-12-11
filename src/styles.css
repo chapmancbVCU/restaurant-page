@@ -210,6 +210,10 @@ h2, h3 {
   flex-wrap: wrap;
 }
 
+.form-row:last-of-type {
+  margin-bottom: 5px;
+}
+
 .form-row input[type='text'],
 .form-row input[type='email'],
 .form-row input[type='tel'] {
@@ -250,6 +254,29 @@ h2, h3 {
 .form-row .mail-list-label {
   margin-bottom: 0;
 }
+
+.form-row button {
+  font-size:  16px;
+  font-weight: bold;
+
+  color: #FFFFFF;
+  background-color: #5995DA;
+
+  border: none;
+  border-radius: 3px;
+
+  padding: 10px 40px;
+  cursor: pointer;
+}
+
+.form-row button:hover {
+  background-color: #76AEED;
+}
+
+.form-row button:active {
+  background-color: #407FC7;
+}
+
 @media only screen and (min-width: 700px) {
   .tabs {
     column-gap: 100px;
@@ -299,5 +326,9 @@ h2, h3 {
   .form-row .mail-list-label {
     margin-left: 125px;
     width: auto;
+  }
+
+  .form-row button {
+    margin-left: 140px;
   }
 }
