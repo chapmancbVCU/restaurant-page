@@ -200,6 +200,7 @@ h2, h3 {
 .form-container {
   margin-bottom: 25px;
 }
+
 .info-form {
   margin-top: 10px;
   width: 95%;
@@ -226,6 +227,10 @@ h2, h3 {
   width: 100%;
   padding: 7px;
   font-size: 14px;
+}
+
+.form-row span {
+  margin-left: 10px;
 }
 
 .form-row label {
