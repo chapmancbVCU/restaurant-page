@@ -114,7 +114,7 @@ export class ContactUs extends Page {
         fullName.append(fullNameInput);
         form.appendChild(fullName);
         
-
+        // Email
 
         formContainer.appendChild(form);
         parentContainer.appendChild(formContainer);
