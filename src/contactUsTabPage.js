@@ -162,6 +162,7 @@ export class ContactUs extends Page {
         form.action = ' ';
         form.method = 'get';
         form.classList.add('info-form');
+        form.setAttribute('name', 'info-form');
 
         // Name
         const fullName = document.createElement('div');
@@ -176,6 +177,9 @@ export class ContactUs extends Page {
         fullNameInput.setAttribute('id', 'full-name');
         fullNameInput.setAttribute('name', 'full-name');
         fullNameInput.setAttribute('type', 'text');
+        fullNameInput.setAttribute('minlength', '5');
+        fullNameInput.setAttribute('maxlength', '30');
+        fullNameInput.setAttribute('required', '');
         fullName.append(fullNameInput);
         form.appendChild(fullName);
         
@@ -193,6 +197,7 @@ export class ContactUs extends Page {
         emailInput.setAttribute('name', 'email');
         emailInput.setAttribute('type', 'email');
         emailInput.placeholder = 'joe@example.com';
+        emailInput.setAttribute('required', '');
         email.appendChild(emailInput);
         form.appendChild(email);
 
@@ -213,6 +218,7 @@ export class ContactUs extends Page {
         phoneNumberInpuut.setAttribute('minlength', '12');
         phoneNumberInpuut.setAttribute('maxlength', '12');
         phoneNumberInpuut.setAttribute('placeholder', 'ex: 123-456-7890');
+        phoneNumberInpuut.setAttribute('required', '');
         phoneNumber.appendChild(phoneNumberInpuut);
         form.appendChild(phoneNumber);
 
@@ -275,6 +281,10 @@ export class ContactUs extends Page {
         const commentsTextArea = document.createElement('textarea');
         commentsTextArea.setAttribute('id', 'comments');
         commentsTextArea.setAttribute('name', 'comments');
+        commentsTextArea.setAttribute('minlength', '10');
+        commentsTextArea.setAttribute('maxlength', '500')
+        commentsTextArea.setAttribute('placeholder', 'Write us a message between 10 and 500 characters in length');
+        commentsTextArea.setAttribute('required', '');
         comments.appendChild(commentsTextArea);
 
         form.appendChild(comments);
@@ -326,6 +336,21 @@ export class ContactUs extends Page {
             const formattedInputValue = 
                 this.formatPhoneNumber(userPhoneInput.value);
             userPhoneInput.value = formattedInputValue;
+        });
+    }
+
+    /**
+     * Performs validation for the E-mail field.
+     */
+    validateEmail(){
+        const emailInput = document.getElementById('email');
+        emailInput.addEventListener('input', (event) => {
+            if(emailInput.validity.typeMismatch) {
+                emailInput.setCustomValidity("Incorrect format");
+                emailInput.reportValidity();
+            } else {
+                emailInput.setCustomValidity("");
+            }
         });
     }
 }

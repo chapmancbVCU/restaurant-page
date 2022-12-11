@@ -241,8 +241,7 @@ h2, h3 {
   border-radius: 3px;
   width: 280px;
   padding: 5px;
-  font-size: 14px;            /* This won't work in Chrome of Safari */
-  -webkit-appearance: none;   /* This will make it work */
+  font-size: 14px;
 }
 
 .form-row textarea {

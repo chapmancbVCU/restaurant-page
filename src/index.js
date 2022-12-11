@@ -61,6 +61,7 @@ home.footerComponents();
      contactUs.components();
      menu.footerComponents();
 
-     // Call event listener for phone number input.
+     // Call event listeners that performs form validation.
      contactUs.phoneNumberFormatter();
+     contactUs.validateEmail();
  });
