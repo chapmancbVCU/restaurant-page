@@ -52,13 +52,19 @@ export class Menu extends Page {
         Menu.renderSoftdrinks(mainContent);
     }
 
-
+    /**
+     * This method is responsible for rendering an image of a bag of burnt 
+     * popcorn.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
     static renderBurntPopcornImage(parentContainer) {
         const burntPopcornImage = new Image();
         burntPopcornImage.classList.add('tall-image-2');
         burntPopcornImage.src = BurntPopcornImage;
         parentContainer.appendChild(burntPopcornImage);
     }
+
     /**
      * This method is responsible for rendering an image of a glass of 
      * CocaCola.
@@ -145,10 +151,33 @@ export class Menu extends Page {
         toppingsSectionContainer.classList.add('menu-items-container');
 
         const toppingsIntro = document.createElement('p');
-        toppingsIntro.textContent = 'We offer a variety of toppings.  Of course, salt is always free.';
+        toppingsIntro.textContent = 'We offer a variety of toppings.  Of course, Classic Toppings are always free.';
         toppingsSectionContainer.appendChild(toppingsIntro);
 
+        // Basic toppings table setup
+        const basicsTable = document.createElement('table');
+        const basicsTableCaption = document.createElement('caption');
+        basicsTableCaption.textContent = 'Classic Toppings';
+        basicsTable.appendChild(basicsTableCaption);        
+        toppingsSectionContainer.appendChild(basicsTable);
 
+        // Basic topping selection
+        const basicsTableRow = document.createElement('tr');
+        const butter = document.createElement('td');
+        butter.textContent = 'Butter';
+        basicsTableRow.appendChild(butter);
+        const salt = document.createElement('td');
+        salt.textContent = 'Salt';
+        basicsTableRow.appendChild(salt);
+        const parmesanCheese = document.createElement('td');
+        parmesanCheese.textContent = 'Parmesan Cheese';
+        basicsTableRow.appendChild(parmesanCheese);
+        basicsTable.appendChild(basicsTableRow);
+
+        // Specialty toppings
+        const specialtyToppingsLabel = document.createElement('h4');
+        specialtyToppingsLabel.textContent = "Specialty Toppings";
+        toppingsSectionContainer.appendChild(specialtyToppingsLabel);
         parentContainer.appendChild(toppingsSectionContainer);
     }
 
