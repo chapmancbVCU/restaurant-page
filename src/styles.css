@@ -109,7 +109,7 @@ h2, h3 {
   text-align: center;
 }
 
-.paragraph-container, .form-container, .menu-items-container {
+.wide-content-container, .form-container, .menu-items-container {
   background-color: burlywood;
   border: solid black 1px;
   border-radius: 5px;
@@ -177,6 +177,18 @@ h2, h3 {
   border-radius: 10px;
 }
 
+.rectangle-image-2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+
+  width: 300px;
+  height: 250px;
+
+  border-radius: 10px;
+}
+
 .tall-image {
   display: block;
   margin-left: auto;
@@ -189,6 +201,17 @@ h2, h3 {
   border-radius: 10px;
 }
 
+.tall-image-2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+
+  width: 300px;
+  height: 450px;
+
+  border-radius: 10px;
+}
 .location-info {
   margin-bottom: 25px;
 }
@@ -323,7 +346,7 @@ td, th {
     width: 100px;
   }
 
-  .paragraph-container, .form-container, .menu-items-container {
+  .wide-content-container, .form-container, .menu-items-container {
     width: 400px;
   }
 

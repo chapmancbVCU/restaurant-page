@@ -59,7 +59,7 @@ export class ContactUs extends Page {
         parentContainer.appendChild(contactInfo);
 
         const contactInfoContainer = document.createElement('div');
-        contactInfoContainer.classList.add('paragraph-container');
+        contactInfoContainer.classList.add('wide-content-container');
 
         const phoneNumber = document.createElement('p');
         phoneNumber.textContent = 'Call Us: 123-456-7890';
@@ -80,7 +80,7 @@ export class ContactUs extends Page {
      */
     static contactIntro(parentContainer) {
         const contactUsContainer = document.createElement('div');
-        contactUsContainer.classList.add('paragraph-container');
+        contactUsContainer.classList.add('wide-content-container');
 
         const reachUs = document.createElement('p');
         reachUs.classList.add('contact-us');

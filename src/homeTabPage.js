@@ -69,7 +69,7 @@ export class Home extends Page {
      */
     static aboutUs(parentContainer) {
         const aboutUsContainer = document.createElement('div');
-        aboutUsContainer.classList.add('paragraph-container');
+        aboutUsContainer.classList.add('wide-content-container');
 
         const aboutUs = document.createElement('p');
         aboutUs.classList.add('about-us');
