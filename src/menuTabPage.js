@@ -132,7 +132,14 @@ export class Menu extends Page {
         Menu.renderPopcornToppingsImage(parentContainer);
 
         const toppingsSectionContainer = document.createElement('div');
-        toppingsSectionContainer.classList.add('wide-content-container');
+        toppingsSectionContainer.classList.add('menu-items-container');
+
+        const toppingsIntro = document.createElement('p');
+        toppingsIntro.textContent = 'We offer a variety of toppings.  Of course, salt is always free.';
+
+        toppingsSectionContainer.appendChild(toppingsIntro);
+
+        parentContainer.appendChild(toppingsSectionContainer);
     }
 
     /**
