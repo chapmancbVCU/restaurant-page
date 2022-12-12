@@ -37,10 +37,61 @@ export class Menu extends Page {
         pageTitle.textContent = 'Menu';
         mainContent.appendChild(pageTitle);
 
-
+        // Main menu items
+        Menu.renderMainItems(mainContent);
 
         // Soft drinks
         Menu.renderSoftdrinks(mainContent);
+    }
+
+    static renderMainItems(parentContainer) {
+        const popcornHeader = document.createElement('h3');
+        popcornHeader.textContent = 'Popcorn Selection';
+        parentContainer.appendChild(popcornHeader);
+
+        const popcornPricesContainer = document.createElement('div');
+        popcornPricesContainer.classList.add('paragraph-container');
+
+        const offeringsList = document.createElement('p');
+        offeringsList.textContent = "Choose between regular, slightly burnt, medium burnt, burnt, or our Scorched Earth Specialty";
+        popcornPricesContainer.appendChild(offeringsList);
+
+        // Setup the table and header
+        const popcornPricesTable = document.createElement('table');
+        const tableHeader = document.createElement('tr');
+
+        const smallPopcornLabel = document.createElement('th');
+        smallPopcornLabel.textContent = 'Small';
+        tableHeader.appendChild(smallPopcornLabel);
+
+        const mediumPopcornLabel = document.createElement('th');
+        mediumPopcornLabel.textContent = 'Medium';
+        tableHeader.appendChild(mediumPopcornLabel);
+
+        const largePopcornLabel = document.createElement('th');
+        largePopcornLabel.textContent = 'Large';
+        tableHeader.appendChild(largePopcornLabel);
+
+        popcornPricesTable.appendChild(tableHeader);
+
+        // Setup row for prices for each size
+        const popcornPricesRow = document.createElement('tr');
+
+        const smallPopcornPrice = document.createElement('td');
+        smallPopcornPrice.textContent = '$2.99';
+        popcornPricesRow.appendChild(smallPopcornPrice);
+
+        const mediumPopcornPrice = document.createElement('td');
+        mediumPopcornPrice.textContent = '$3.99';
+        popcornPricesRow.appendChild(mediumPopcornPrice);
+
+        const largePopcornPrice = document.createElement('td');
+        largePopcornPrice.textContent = '$4.99';
+        popcornPricesRow.appendChild(largePopcornPrice);
+
+        popcornPricesTable.appendChild(popcornPricesRow);
+        popcornPricesContainer.appendChild(popcornPricesTable);
+        parentContainer.appendChild(popcornPricesContainer);
     }
 
     /**
@@ -67,6 +118,7 @@ export class Menu extends Page {
                 'Coca-Cola, Sprite, Dr Pepper, Diet Coke, and Fanta Orange';
         softDrinksContainer.appendChild(softDrinksList);
 
+        // Setup the table and header
         const softDrinksTable = document.createElement('table');
         const tableHeader = document.createElement('tr');
 
@@ -83,6 +135,8 @@ export class Menu extends Page {
         tableHeader.appendChild(largeDrinkLabel);
 
         softDrinksTable.appendChild(tableHeader);
+
+        // Setup row for prices for each size
         const drinkPricesRow = document.createElement('tr');
 
         const smallDrinkPrice = document.createElement('td');
@@ -97,9 +151,7 @@ export class Menu extends Page {
         largeDrinkPrice.textContent = '$2.49';
         drinkPricesRow.appendChild(largeDrinkPrice);
 
-
         softDrinksTable.appendChild(drinkPricesRow);
-
         softDrinksContainer.appendChild(softDrinksTable);
         parentContainer.appendChild(softDrinksContainer);
     }
