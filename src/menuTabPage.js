@@ -43,6 +43,12 @@ export class Menu extends Page {
         Menu.renderSoftdrinks(mainContent);
     }
 
+    /**
+     * This method is responsible for rendering the soft drinks section of 
+     * this page.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
     static renderSoftdrinks(parentContainer) {
         const softDrinksHeader = document.createElement('h3');
         softDrinksHeader.textContent = 'Soft Drinks';
