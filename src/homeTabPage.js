@@ -155,7 +155,7 @@ export class Home extends Page {
      */
     static renderPopcornBowl(parentContainer) {
         const popCornBowlImage = new Image();
-        popCornBowlImage.classList.add('popcorn-bowl-image');
+        popCornBowlImage.classList.add('rectangle-image');
         popCornBowlImage.src = PopcornBowl;
         parentContainer.appendChild(popCornBowlImage);
     }
