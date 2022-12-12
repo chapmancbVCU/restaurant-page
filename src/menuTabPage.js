@@ -9,6 +9,7 @@
  * IMPORTS
  *****************************************************************************/
 import { Page } from "./page";
+import BurntPopcornImage from './burnt-popcorn.jpg';
 import CocaColaImage from './coca-cola-image.jpg';
 import PopcornToppings from './popcorn-toppings.jpg';
 
@@ -39,6 +40,8 @@ export class Menu extends Page {
         pageTitle.textContent = 'Menu';
         mainContent.appendChild(pageTitle);
 
+        Menu.renderBurntPopcornImage(mainContent);
+
         // Main menu items
         Menu.renderMainItems(mainContent);
 
@@ -49,6 +52,13 @@ export class Menu extends Page {
         Menu.renderSoftdrinks(mainContent);
     }
 
+
+    static renderBurntPopcornImage(parentContainer) {
+        const burntPopcornImage = new Image();
+        burntPopcornImage.classList.add('tall-image-2');
+        burntPopcornImage.src = BurntPopcornImage;
+        parentContainer.appendChild(burntPopcornImage);
+    }
     /**
      * This method is responsible for rendering an image of a glass of 
      * CocaCola.
@@ -136,8 +146,8 @@ export class Menu extends Page {
 
         const toppingsIntro = document.createElement('p');
         toppingsIntro.textContent = 'We offer a variety of toppings.  Of course, salt is always free.';
-
         toppingsSectionContainer.appendChild(toppingsIntro);
+
 
         parentContainer.appendChild(toppingsSectionContainer);
     }
