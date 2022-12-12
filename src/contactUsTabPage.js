@@ -87,11 +87,6 @@ export class ContactUs extends Page {
         reachUs.textContent = "We value every customer's feedback.  Whether it be complements or otherwise, you can reach us through many different methods including social media or in person at our location in downtown Westchestertonfieldville.";
         contactUsContainer.appendChild(reachUs);
 
-        const catering = document.createElement('p');
-        catering.classList.add('contact-us');
-        catering.textContent = "We also offer catering services and our food truck operates daily at the local college campus.";
-        contactUsContainer.appendChild(catering);
-
         parentContainer.appendChild(contactUsContainer);
     }
 

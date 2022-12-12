@@ -72,9 +72,15 @@ export class Home extends Page {
         aboutUsContainer.classList.add('paragraph-container');
 
         const aboutUs = document.createElement('p');
+        aboutUs.classList.add('about-us');
         aboutUs.textContent = 'At Burnt Popcorn Eatery we offer different types of popcorn but our specialty is burnt popcorn.  We also offer several types of delicious beverages and smoothies that are perfect for washing down our delicious snacks.';
-        
-        aboutUsContainer.appendChild(aboutUs)
+        aboutUsContainer.appendChild(aboutUs);
+
+        const catering = document.createElement('p');
+        catering.classList.add('about-us');
+        catering.textContent = "We also offer catering services and our food truck operates daily at the local college campus.";
+        aboutUsContainer.appendChild(catering);
+
         parentContainer.appendChild(aboutUsContainer);
     }
 
