@@ -173,7 +173,7 @@ export class Home extends Page {
      */
     static renderPopcornMug(parentContainer) {
         const popCornMugImage = new Image();
-        popCornMugImage.classList.add('popcorn-mug-image');
+        popCornMugImage.classList.add('tall-image');
         popCornMugImage.src = PopcornMug;
         parentContainer.appendChild(popCornMugImage);
     }
