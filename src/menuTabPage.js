@@ -10,6 +10,8 @@
  *****************************************************************************/
 import { Page } from "./page";
 import CocaColaImage from './coca-cola-image.jpg';
+import PopcornToppings from './popcorn-toppings.jpg';
+
 /**
  * This class describes the methods for updating the menu page.  It extends 
  * the Page class.
@@ -40,17 +42,39 @@ export class Menu extends Page {
         // Main menu items
         Menu.renderMainItems(mainContent);
 
+        // Popcorn toppings
+        Menu.renderPopcornTopppings(mainContent);
+
         // Soft drinks
         Menu.renderSoftdrinks(mainContent);
     }
 
+    /**
+     * This method is responsible for rendering an image of a glass of 
+     * CocaCola.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
+    static renderCocaColaImage(parentContainer) {
+        const cocaColaImage = new Image();
+        cocaColaImage.classList.add('rectangle-image-2');
+        cocaColaImage.src = CocaColaImage;
+        parentContainer.appendChild(cocaColaImage);
+    }
+
+    /**
+     * This method is responsible for rendering the main offerings section 
+     * of the menu.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
     static renderMainItems(parentContainer) {
         const popcornHeader = document.createElement('h3');
         popcornHeader.textContent = 'Popcorn Selection';
         parentContainer.appendChild(popcornHeader);
 
         const popcornPricesContainer = document.createElement('div');
-        popcornPricesContainer.classList.add('paragraph-container');
+        popcornPricesContainer.classList.add('wide-content-container');
 
         const offeringsList = document.createElement('p');
         offeringsList.textContent = "Choose between regular, slightly burnt, medium burnt, burnt, or our Scorched Earth Specialty";
@@ -95,6 +119,36 @@ export class Menu extends Page {
     }
 
     /**
+     * This method is responsible for rendering the popcorn toppings section 
+     * of this page.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
+    static renderPopcornTopppings(parentContainer) {
+        const toppingsSectionLabel = document.createElement('h3');
+        toppingsSectionLabel.textContent = 'Toppings';
+        parentContainer.appendChild(toppingsSectionLabel);
+
+        Menu.renderPopcornToppingsImage(parentContainer);
+
+        const toppingsSectionContainer = document.createElement('div');
+        toppingsSectionContainer.classList.add('wide-content-container');
+    }
+
+    /**
+     * This method is responsible for rendering the image of bowls of popcorn 
+     * with various toppings.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
+    static renderPopcornToppingsImage(parentContainer) {
+        const popcornToppingsImage = new Image();
+        popcornToppingsImage.classList.add('tall-image-2');
+        popcornToppingsImage.src = PopcornToppings;
+        parentContainer.appendChild(popcornToppingsImage);
+    }
+
+    /**
      * This method is responsible for rendering the soft drinks section of 
      * this page.
      * @param {HTMLDivElement} parentContainer the container that is the 
@@ -105,10 +159,7 @@ export class Menu extends Page {
         softDrinksHeader.textContent = 'Soft Drinks';
         parentContainer.appendChild(softDrinksHeader);
 
-        const cocaColaImage = new Image();
-        cocaColaImage.classList.add('rectangle-image');
-        cocaColaImage.src = CocaColaImage;
-        parentContainer.appendChild(cocaColaImage);
+        Menu.renderCocaColaImage(parentContainer);        
 
         const softDrinksContainer = document.createElement('div');
         softDrinksContainer.classList.add('menu-items-container');
