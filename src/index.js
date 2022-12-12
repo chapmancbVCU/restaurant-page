@@ -57,9 +57,9 @@ home.footerComponents();
  
  contactUsPage.addEventListener('click', function() {
      contactUs.eraseDomContent();
-     menu.removeFooterFromDom();
+     contactUs.removeFooterFromDom();
      contactUs.components();
-     menu.footerComponents();
+     contactUs.footerComponents();
 
      // Call event listeners that performs form validation.
      contactUs.phoneNumberFormatter();
