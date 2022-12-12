@@ -33,7 +33,7 @@ body {
   
   margin-left: auto;
   margin-right: auto;
-  background-color: burlywood;
+  
 
   display: flex;
   flex-direction: column;
@@ -98,6 +98,8 @@ h1 {
 
 .main-content {
   background-color: var(--tab-and-page-color);
+  border-left: solid black 1px;
+  border-right: solid black 1px;
 }
 
 h2, h3 {
@@ -150,7 +152,8 @@ h2, h3 {
 }
 
 .page-footer {
-  border-top: solid black 1px;
+  border: solid black 1px;
+  background-color: burlywood;
   padding-top: 15px;
   padding-bottom: 30px;
 }
