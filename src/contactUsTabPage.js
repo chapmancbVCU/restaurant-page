@@ -283,7 +283,7 @@ export class ContactUs extends Page {
         commentsTextArea.setAttribute('name', 'comments');
         commentsTextArea.setAttribute('minlength', '10');
         commentsTextArea.setAttribute('maxlength', '500')
-        commentsTextArea.setAttribute('placeholder', 'Write us a message between 10 and 500 characters in length');
+        commentsTextArea.setAttribute('placeholder', 'Please enter a message between 10 and 500 characters in length');
         commentsTextArea.setAttribute('required', '');
         comments.appendChild(commentsTextArea);
 
