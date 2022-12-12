@@ -9,7 +9,7 @@
  * IMPORTS
  *****************************************************************************/
 import { Page } from "./page";
-
+import CocaColaImage from './coca-cola-image.jpg';
 /**
  * This class describes the methods for updating the menu page.  It extends 
  * the Page class.
@@ -36,5 +36,65 @@ export class Menu extends Page {
         const pageTitle = document.createElement('h2');
         pageTitle.textContent = 'Menu';
         mainContent.appendChild(pageTitle);
+
+
+
+        // Soft drinks
+        Menu.renderSoftdrinks(mainContent);
+    }
+
+    static renderSoftdrinks(parentContainer) {
+        const softDrinksHeader = document.createElement('h3');
+        softDrinksHeader.textContent = 'Soft Drinks';
+        parentContainer.appendChild(softDrinksHeader);
+
+        const cocaColaImage = new Image();
+        cocaColaImage.classList.add('rectangle-image');
+        cocaColaImage.src = CocaColaImage;
+        parentContainer.appendChild(cocaColaImage);
+
+        const softDrinksContainer = document.createElement('div');
+        softDrinksContainer.classList.add('menu-items-container');
+
+        const softDrinksList = document.createElement('p');
+        softDrinksList.textContent = 
+                'Coca-Cola, Sprite, Dr Pepper, Diet Coke, and Fanta Orange';
+        softDrinksContainer.appendChild(softDrinksList);
+
+        const softDrinksTable = document.createElement('table');
+        const tableHeader = document.createElement('tr');
+
+        const smallDrinkLabel = document.createElement('th');
+        smallDrinkLabel.textContent = 'Small';
+        tableHeader.appendChild(smallDrinkLabel);
+
+        const mediumDrinkLabel = document.createElement('th');
+        mediumDrinkLabel.textContent = 'Medium';
+        tableHeader.appendChild(mediumDrinkLabel);
+
+        const largeDrinkLabel = document.createElement('th');
+        largeDrinkLabel.textContent = 'Large';
+        tableHeader.appendChild(largeDrinkLabel);
+
+        softDrinksTable.appendChild(tableHeader);
+        const drinkPricesRow = document.createElement('tr');
+
+        const smallDrinkPrice = document.createElement('td');
+        smallDrinkPrice.textContent = '$1.49';
+        drinkPricesRow.appendChild(smallDrinkPrice);
+
+        const mediumDrinkPrice = document.createElement('td');
+        mediumDrinkPrice.textContent = '$1.99';
+        drinkPricesRow.appendChild(mediumDrinkPrice);
+
+        const largeDrinkPrice = document.createElement('td');
+        largeDrinkPrice.textContent = '$2.49';
+        drinkPricesRow.appendChild(largeDrinkPrice);
+
+
+        softDrinksTable.appendChild(drinkPricesRow);
+
+        softDrinksContainer.appendChild(softDrinksTable);
+        parentContainer.appendChild(softDrinksContainer);
     }
 }
