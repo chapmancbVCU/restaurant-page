@@ -78,7 +78,7 @@ export class Home extends Page {
 
         const catering = document.createElement('p');
         catering.classList.add('about-us');
-        catering.textContent = "We also offer catering services and our food truck operates daily at the local college campus.";
+        catering.textContent = "We also offer catering services and our food truck operates on weekdays from 10:30 AM - 3:30 PM next to the Student Commons at Westchestertonfieldville State University.  Go Swarming Gnats!!!";
         aboutUsContainer.appendChild(catering);
 
         parentContainer.appendChild(aboutUsContainer);
@@ -97,32 +97,32 @@ export class Home extends Page {
         parentContainer.appendChild(sunday);
 
         const monday = document.createElement('p');
-        monday.textContent = 'Monday: 3PM - 10PM';
+        monday.textContent = 'Monday: 3 PM - 10 PM';
         monday.classList.add('daily-hours');
         parentContainer.appendChild(monday);
 
         const tuesday = document.createElement('p');
-        tuesday.textContent = 'Tuesday: 3PM - 10PM';
+        tuesday.textContent = 'Tuesday: 3 PM - 10 PM';
         tuesday.classList.add('daily-hours');
         parentContainer.appendChild(tuesday);
 
         const wednesday = document.createElement('p');
-        wednesday.textContent = 'Wednesday: 3PM - 10PM';
+        wednesday.textContent = 'Wednesday: 3 PM - 10 PM';
         wednesday.classList.add('daily-hours');
         parentContainer.appendChild(wednesday);
 
         const thursday = document.createElement('p');
-        thursday.textContent = 'Thursday: 3PM - 10PM';
+        thursday.textContent = 'Thursday: 3 PM - 10 PM';
         thursday.classList.add('daily-hours');
         parentContainer.appendChild(thursday);
 
         const friday = document.createElement('p');
-        friday.textContent = 'Friday: 3PM - 11PM';
+        friday.textContent = 'Friday: 3 PM - 11 PM';
         friday.classList.add('daily-hours');
         parentContainer.appendChild(friday);
 
         const saturday = document.createElement('p');
-        saturday.textContent = 'Saturday: 11AM - 10PM';
+        saturday.textContent = 'Saturday: 10:30 AM - 11 PM';
         saturday.classList.add('daily-hours');
         parentContainer.appendChild(saturday);
     }
