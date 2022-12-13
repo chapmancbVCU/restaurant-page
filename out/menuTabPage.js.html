@@ -37,7 +37,10 @@
  * IMPORTS
  *****************************************************************************/
 import { Page } from "./page";
+import BurntPopcornImage from './burnt-popcorn.jpg';
 import CocaColaImage from './coca-cola-image.jpg';
+import PopcornToppings from './popcorn-toppings.jpg';
+
 /**
  * This class describes the methods for updating the menu page.  It extends 
  * the Page class.
@@ -65,10 +68,236 @@ export class Menu extends Page {
         pageTitle.textContent = 'Menu';
         mainContent.appendChild(pageTitle);
 
+        Menu.renderBurntPopcornImage(mainContent);
 
+        // Main menu items
+        Menu.renderMainItems(mainContent);
+
+        // Popcorn toppings
+        Menu.renderPopcornTopppings(mainContent);
 
         // Soft drinks
         Menu.renderSoftdrinks(mainContent);
+    }
+
+    /**
+     * This method is responsible for rendering an image of a bag of burnt 
+     * popcorn.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
+    static renderBurntPopcornImage(parentContainer) {
+        const burntPopcornImage = new Image();
+        burntPopcornImage.classList.add('tall-image-2');
+        burntPopcornImage.src = BurntPopcornImage;
+        parentContainer.appendChild(burntPopcornImage);
+    }
+
+    /**
+     * This method is responsible for rendering an image of a glass of 
+     * CocaCola.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
+    static renderCocaColaImage(parentContainer) {
+        const cocaColaImage = new Image();
+        cocaColaImage.classList.add('rectangle-image-2');
+        cocaColaImage.src = CocaColaImage;
+        parentContainer.appendChild(cocaColaImage);
+    }
+
+    /**
+     * This method is responsible for rendering the main offerings section 
+     * of the menu.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
+    static renderMainItems(parentContainer) {
+        const popcornHeader = document.createElement('h3');
+        popcornHeader.textContent = 'Popcorn Selection';
+        parentContainer.appendChild(popcornHeader);
+
+        const popcornPricesContainer = document.createElement('div');
+        popcornPricesContainer.classList.add('wide-content-container');
+
+        const offeringsList = document.createElement('p');
+        offeringsList.textContent = "Choose between regular, slightly burnt, medium burnt, burnt, or our Scorched Earth Specialty";
+        popcornPricesContainer.appendChild(offeringsList);
+
+        // Setup the table and header
+        const popcornPricesTable = document.createElement('table');
+        const tableHeader = document.createElement('tr');
+
+        const smallPopcornLabel = document.createElement('th');
+        smallPopcornLabel.textContent = 'Small';
+        tableHeader.appendChild(smallPopcornLabel);
+
+        const mediumPopcornLabel = document.createElement('th');
+        mediumPopcornLabel.textContent = 'Medium';
+        tableHeader.appendChild(mediumPopcornLabel);
+
+        const largePopcornLabel = document.createElement('th');
+        largePopcornLabel.textContent = 'Large';
+        tableHeader.appendChild(largePopcornLabel);
+
+        popcornPricesTable.appendChild(tableHeader);
+
+        // Setup row for prices for each size
+        const popcornPricesRow = document.createElement('tr');
+
+        const smallPopcornPrice = document.createElement('td');
+        smallPopcornPrice.textContent = '$2.99';
+        popcornPricesRow.appendChild(smallPopcornPrice);
+
+        const mediumPopcornPrice = document.createElement('td');
+        mediumPopcornPrice.textContent = '$3.99';
+        popcornPricesRow.appendChild(mediumPopcornPrice);
+
+        const largePopcornPrice = document.createElement('td');
+        largePopcornPrice.textContent = '$4.99';
+        popcornPricesRow.appendChild(largePopcornPrice);
+
+        popcornPricesTable.appendChild(popcornPricesRow);
+        popcornPricesContainer.appendChild(popcornPricesTable);
+        parentContainer.appendChild(popcornPricesContainer);
+    }
+
+    /**
+     * This method is responsible for rendering the popcorn toppings section 
+     * of this page.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
+    static renderPopcornTopppings(parentContainer) {
+        const toppingsSectionLabel = document.createElement('h3');
+        toppingsSectionLabel.textContent = 'Toppings';
+        parentContainer.appendChild(toppingsSectionLabel);
+
+        Menu.renderPopcornToppingsImage(parentContainer);
+
+        const toppingsSectionContainer = document.createElement('div');
+        toppingsSectionContainer.classList.add('menu-items-container');
+
+        const toppingsIntro = document.createElement('p');
+        toppingsIntro.textContent = 'We offer a variety of toppings.  Of course, Classic Toppings are always free.';
+        toppingsSectionContainer.appendChild(toppingsIntro);
+
+        // Basic toppings table setup
+        const basicsTable = document.createElement('table');
+        const basicsTableCaption = document.createElement('caption');
+        basicsTableCaption.textContent = 'Classic Toppings';
+        basicsTable.appendChild(basicsTableCaption);        
+        toppingsSectionContainer.appendChild(basicsTable);
+
+        // Basic topping selection
+        const basicsTableRow = document.createElement('tr');
+        const butter = document.createElement('td');
+        butter.textContent = 'Butter';
+        basicsTableRow.appendChild(butter);
+        const salt = document.createElement('td');
+        salt.textContent = 'Salt';
+        basicsTableRow.appendChild(salt);
+        const parmesanCheese = document.createElement('td');
+        parmesanCheese.textContent = 'Parmesan Cheese';
+        basicsTableRow.appendChild(parmesanCheese);
+        basicsTable.appendChild(basicsTableRow);
+
+        // Specialty toppings
+        const specialtyToppingsLabel = document.createElement('h4');
+        specialtyToppingsLabel.textContent = "Specialty Flavors and Toppings";
+        toppingsSectionContainer.appendChild(specialtyToppingsLabel);
+
+        const specialtyToppingsList = document.createElement('ul');
+        specialtyToppingsList.classList.add('specialty-toppings-list');
+
+        const caramel = document.createElement('li');
+        caramel.textContent = 'Caramel';
+        specialtyToppingsList.appendChild(caramel);
+
+        const applePie = document.createElement('li');
+        applePie.textContent = 'Apple Pie';
+        specialtyToppingsList.appendChild(applePie);
+
+        const pumpkinGlazed = document.createElement('li');
+        pumpkinGlazed.textContent = 'Pumpkin Glazed';
+        specialtyToppingsList.appendChild(pumpkinGlazed);
+
+        const lemonKale = document.createElement('li');
+        lemonKale.textContent = 'Lemon Kale';
+        specialtyToppingsList.appendChild(lemonKale);
+
+        const limeCilantro = document.createElement('li');
+        limeCilantro.textContent = 'Lime Cilantro';
+        specialtyToppingsList.appendChild(limeCilantro);
+
+        const italianBreadstick = document.createElement('li');
+        italianBreadstick.textContent = 'Italian Breadstick';
+        specialtyToppingsList.appendChild(italianBreadstick);
+
+        const peanutButter = document.createElement('li');
+        peanutButter.textContent = 'Peanut Butter';
+        specialtyToppingsList.appendChild(peanutButter);
+
+        const peanutButterHoney = document.createElement('li');
+        peanutButterHoney.textContent = 'Peanut Butter and Honey';
+        specialtyToppingsList.appendChild(peanutButterHoney);
+
+        const pizza = document.createElement('li');
+        pizza.textContent = 'Pizza';
+        specialtyToppingsList.append(pizza);
+
+        toppingsSectionContainer.appendChild(specialtyToppingsList);
+
+        // Setup the table and header for flavor and toppings prices
+        const specialtyPricesTable = document.createElement('table');
+        const tableHeader = document.createElement('tr');
+
+        const lightToppingsLabel = document.createElement('th');
+        lightToppingsLabel.textContent = 'Light';
+        tableHeader.appendChild(lightToppingsLabel);
+
+        const mediumToppingsLabel = document.createElement('th');
+        mediumToppingsLabel.textContent = 'Medium';
+        tableHeader.appendChild(mediumToppingsLabel);
+
+        const extraToppingsLabel = document.createElement('th');
+        extraToppingsLabel.textContent = 'Extra';
+        tableHeader.appendChild(extraToppingsLabel);
+
+        specialtyPricesTable.appendChild(tableHeader);
+
+        // Setup row for prices amount of flavoring and toppings
+        const toppingsPricesRow = document.createElement('tr');
+
+        const lightToppingsPrice = document.createElement('td');
+        lightToppingsPrice.textContent = '$0.99';
+        toppingsPricesRow.appendChild(lightToppingsPrice);
+
+        const mediumToppingsPrice = document.createElement('td');
+        mediumToppingsPrice.textContent = '$1.99';
+        toppingsPricesRow.appendChild(mediumToppingsPrice);
+
+        const extraToppingsPrice = document.createElement('td');
+        extraToppingsPrice.textContent = '$2.99';
+        toppingsPricesRow.appendChild(extraToppingsPrice);
+
+        specialtyPricesTable.appendChild(toppingsPricesRow);
+        toppingsSectionContainer.appendChild(specialtyPricesTable);
+
+        parentContainer.appendChild(toppingsSectionContainer);
+    }
+
+    /**
+     * This method is responsible for rendering the image of bowls of popcorn 
+     * with various toppings.
+     * @param {HTMLDivElement} parentContainer the container that is the 
+     * parent for all of  the elements that will be created with this method.
+     */
+    static renderPopcornToppingsImage(parentContainer) {
+        const popcornToppingsImage = new Image();
+        popcornToppingsImage.classList.add('tall-image-2');
+        popcornToppingsImage.src = PopcornToppings;
+        parentContainer.appendChild(popcornToppingsImage);
     }
 
     /**
@@ -82,10 +311,7 @@ export class Menu extends Page {
         softDrinksHeader.textContent = 'Soft Drinks';
         parentContainer.appendChild(softDrinksHeader);
 
-        const cocaColaImage = new Image();
-        cocaColaImage.classList.add('rectangle-image');
-        cocaColaImage.src = CocaColaImage;
-        parentContainer.appendChild(cocaColaImage);
+        Menu.renderCocaColaImage(parentContainer);        
 
         const softDrinksContainer = document.createElement('div');
         softDrinksContainer.classList.add('menu-items-container');
@@ -95,6 +321,7 @@ export class Menu extends Page {
                 'Coca-Cola, Sprite, Dr Pepper, Diet Coke, and Fanta Orange';
         softDrinksContainer.appendChild(softDrinksList);
 
+        // Setup the table and header
         const softDrinksTable = document.createElement('table');
         const tableHeader = document.createElement('tr');
 
@@ -111,6 +338,8 @@ export class Menu extends Page {
         tableHeader.appendChild(largeDrinkLabel);
 
         softDrinksTable.appendChild(tableHeader);
+
+        // Setup row for prices for each size
         const drinkPricesRow = document.createElement('tr');
 
         const smallDrinkPrice = document.createElement('td');
@@ -125,9 +354,7 @@ export class Menu extends Page {
         largeDrinkPrice.textContent = '$2.49';
         drinkPricesRow.appendChild(largeDrinkPrice);
 
-
         softDrinksTable.appendChild(drinkPricesRow);
-
         softDrinksContainer.appendChild(softDrinksTable);
         parentContainer.appendChild(softDrinksContainer);
     }
@@ -147,7 +374,7 @@ export class Menu extends Page {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sun Dec 11 2022 20:57:03 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Mon Dec 12 2022 20:35:33 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
