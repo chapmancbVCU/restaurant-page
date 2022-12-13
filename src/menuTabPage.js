@@ -176,8 +176,86 @@ export class Menu extends Page {
 
         // Specialty toppings
         const specialtyToppingsLabel = document.createElement('h4');
-        specialtyToppingsLabel.textContent = "Specialty Toppings";
+        specialtyToppingsLabel.textContent = "Specialty Flavors and Toppings";
         toppingsSectionContainer.appendChild(specialtyToppingsLabel);
+
+        const specialtyToppingsList = document.createElement('ul');
+        specialtyToppingsList.classList.add('specialty-toppings-list');
+
+        const caramel = document.createElement('li');
+        caramel.textContent = 'Caramel';
+        specialtyToppingsList.appendChild(caramel);
+
+        const applePie = document.createElement('li');
+        applePie.textContent = 'Apple Pie';
+        specialtyToppingsList.appendChild(applePie);
+
+        const pumpkinGlazed = document.createElement('li');
+        pumpkinGlazed.textContent = 'Pumpkin Glazed';
+        specialtyToppingsList.appendChild(pumpkinGlazed);
+
+        const lemonKale = document.createElement('li');
+        lemonKale.textContent = 'Lemon Kale';
+        specialtyToppingsList.appendChild(lemonKale);
+
+        const limeCilantro = document.createElement('li');
+        limeCilantro.textContent = 'Lime Cilantro';
+        specialtyToppingsList.appendChild(limeCilantro);
+
+        const italianBreadstick = document.createElement('li');
+        italianBreadstick.textContent = 'Italian Breadstick';
+        specialtyToppingsList.appendChild(italianBreadstick);
+
+        const peanutButter = document.createElement('li');
+        peanutButter.textContent = 'Peanut Butter';
+        specialtyToppingsList.appendChild(peanutButter);
+
+        const peanutButterHoney = document.createElement('li');
+        peanutButterHoney.textContent = 'Peanut Butter and Honey';
+        specialtyToppingsList.appendChild(peanutButterHoney);
+
+        const pizza = document.createElement('li');
+        pizza.textContent = 'Pizza';
+        specialtyToppingsList.append(pizza);
+
+        toppingsSectionContainer.appendChild(specialtyToppingsList);
+
+        // Setup the table and header for flavor and toppings prices
+        const specialtyPricesTable = document.createElement('table');
+        const tableHeader = document.createElement('tr');
+
+        const lightToppingsLabel = document.createElement('th');
+        lightToppingsLabel.textContent = 'Light';
+        tableHeader.appendChild(lightToppingsLabel);
+
+        const mediumToppingsLabel = document.createElement('th');
+        mediumToppingsLabel.textContent = 'Medium';
+        tableHeader.appendChild(mediumToppingsLabel);
+
+        const extraToppingsLabel = document.createElement('th');
+        extraToppingsLabel.textContent = 'Extra';
+        tableHeader.appendChild(extraToppingsLabel);
+
+        specialtyPricesTable.appendChild(tableHeader);
+
+        // Setup row for prices amount of flavoring and toppings
+        const toppingsPricesRow = document.createElement('tr');
+
+        const lightToppingsPrice = document.createElement('td');
+        lightToppingsPrice.textContent = '$0.99';
+        toppingsPricesRow.appendChild(lightToppingsPrice);
+
+        const mediumToppingsPrice = document.createElement('td');
+        mediumToppingsPrice.textContent = '$1.99';
+        toppingsPricesRow.appendChild(mediumToppingsPrice);
+
+        const extraToppingsPrice = document.createElement('td');
+        extraToppingsPrice.textContent = '$2.99';
+        toppingsPricesRow.appendChild(extraToppingsPrice);
+
+        specialtyPricesTable.appendChild(toppingsPricesRow);
+        toppingsSectionContainer.appendChild(specialtyPricesTable);
+
         parentContainer.appendChild(toppingsSectionContainer);
     }
 

@@ -345,6 +345,10 @@ caption {
   font-weight: bold;
 }
 
+.specialty-toppings-list {
+  list-style-type: none;
+}
+
 @media only screen and (min-width: 700px) {
   .tabs {
     column-gap: 100px;
