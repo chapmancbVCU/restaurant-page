@@ -161,12 +161,21 @@ h4 {
   background-color: burlywood;
   padding-top: 15px;
   padding-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .footer-text {
-  margin: 1px;
+  margin: 10px;
   font-size: 20px;
   text-align: center;
+}
+
+.footer-text:first-of-type {
+  margin-top: 1px;
+}
+
+.footer-text:last-of-type {
+  margin-bottom: 1px;
 }
 
 .rectangle-image {
